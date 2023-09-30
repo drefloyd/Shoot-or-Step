@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,11 +25,21 @@ public class EndTurn : MonoBehaviour
         {
             p1Turn = true;
             p2Turn = false;
+
+            p1DiceButton.interactable = true;
+            p2DiceButton.interactable = false;
+
+            Debug.Log("Player 1 goes first.");
         }
         else
         {
             p1Turn = false;
             p2Turn = true;
+
+            p1DiceButton.interactable = false;
+            p2DiceButton.interactable = true;
+
+            Debug.Log("Player 2 goes first.");
         }
     }
 
@@ -36,6 +47,8 @@ public class EndTurn : MonoBehaviour
     {
         if(p1Turn == true)
         {
+            Debug.Log("It is now Player 2's turn.");
+
             p1Turn = false;
             p2Turn = true;
 
@@ -46,6 +59,8 @@ public class EndTurn : MonoBehaviour
         }
         else
         {
+            Debug.Log("It is now Player 1's turn.");
+
             p1Turn = true;
             p2Turn = false;
 
