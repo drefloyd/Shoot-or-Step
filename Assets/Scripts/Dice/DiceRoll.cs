@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class DiceRoll : MonoBehaviour
 {
-    [SerializeField] private int numberRollded;
+    [SerializeField] private int numberRollded;     // serialized for testing purposes if someone wants to give the die a specific value
 
     public Text p1DiceText;
     public Text p2DiceText;
