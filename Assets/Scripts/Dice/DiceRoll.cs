@@ -12,6 +12,9 @@ public class DiceRoll : MonoBehaviour
     public Text p1DiceText;
     public Text p2DiceText;
 
+    public Button p1DiceButton;
+    public Button p2DiceButton;
+
     public int numberGenerator()
     {
         System.Random rnd = new System.Random();
@@ -26,6 +29,8 @@ public class DiceRoll : MonoBehaviour
         int diceValue = numberGenerator();
 
         p1DiceText.text = diceValue.ToString();
+
+        p1DiceButton.interactable = false;      // locks it so there are no longer infinite rolls
     }
 
     public void ChangeDice2Text()
@@ -33,5 +38,7 @@ public class DiceRoll : MonoBehaviour
         int diceValue = numberGenerator();
 
         p2DiceText.text = diceValue.ToString();
+
+        p2DiceButton.interactable = false;
     }
 }
