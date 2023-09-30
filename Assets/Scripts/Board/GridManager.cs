@@ -6,7 +6,8 @@ public class GridManager : MonoBehaviour
 {
     [SerializeField] private int width, height;
     [SerializeField] private Tile atile;
-    [SerializeField] private Transform theCam;
+    // [SerializeField] private Transform theCam;
+    
     private void Start()
     {
         GenerateGrid();
