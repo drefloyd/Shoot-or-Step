@@ -14,6 +14,8 @@ public class DiceRoll : MonoBehaviour
 
     public Button p1DiceButton;
     public Button p2DiceButton;
+    public static int numMovesP1;
+    public static int numMovesP2;
 
     public int numberGenerator()
     {
@@ -30,6 +32,7 @@ public class DiceRoll : MonoBehaviour
 
         p1DiceText.text = diceValue.ToString();
 
+        numMovesP1 = diceValue;
         p1DiceButton.interactable = false;      // locks it so there are no longer infinite rolls
     }
 
@@ -38,6 +41,7 @@ public class DiceRoll : MonoBehaviour
         int diceValue = numberGenerator();
 
         p2DiceText.text = diceValue.ToString();
+        numMovesP2 = diceValue;
 
         p2DiceButton.interactable = false;
     }
