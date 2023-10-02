@@ -6,7 +6,7 @@ public class GunScript : MonoBehaviour
 {
     public Transform BulletSpawnPoint;
     public GameObject BulletPrefab;
-    public float BulletSpeed = 10;
+    [SerializeField] public float BulletSpeed = 10;
 
     private void Update()
     {
