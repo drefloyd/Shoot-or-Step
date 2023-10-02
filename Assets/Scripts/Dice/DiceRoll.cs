@@ -14,6 +14,7 @@ public class DiceRoll : MonoBehaviour
 
     public Button p1DiceButton;
     public Button p2DiceButton;
+
     public static int numMovesP1;
     public static int numMovesP2;
 

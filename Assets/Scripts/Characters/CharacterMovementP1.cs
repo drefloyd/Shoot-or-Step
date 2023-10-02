@@ -39,9 +39,7 @@ public class CharacterMovement : MonoBehaviour
                     player1.transform.rotation = Quaternion.Euler(0, 0, 90); // Face north
                     --DiceRoll.numMovesP1;
                 }
-
             }
-        }
-       
+        } 
     }
 }

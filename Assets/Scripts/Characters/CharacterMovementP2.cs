@@ -13,7 +13,6 @@ public class CharacterMovementP2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if (p2DiceText.text != "P2 Dice")   // meaning it's die was just rolled then p1 goes
         {
             if (DiceRoll.numMovesP2 > 0)
@@ -41,7 +40,6 @@ public class CharacterMovementP2 : MonoBehaviour
                     player2.transform.rotation = Quaternion.Euler(0, 0, 270); // Face north
                     --DiceRoll.numMovesP2;
                 }
-
             }
         }
     }
