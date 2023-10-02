@@ -18,17 +18,14 @@ public class EndTurn : MonoBehaviour
     public GameObject Player1;
     public GameObject Player2;
 
-    public CharacterMovement p1MovementScript;
-    public CharacterMovement p2MovementScript;
-
     private void Start()
     {
         System.Random rnd = new System.Random();
 
         int turnDecider = rnd.Next(1, 3); // return 1 == p1 turn, 2 == p2 turn to start
 
-        p1MovementScript = GetComponent<CharacterMovement>();
-        p2MovementScript = GetComponent<CharacterMovement>();
+        CharacterMovement p1MovementScript = Player1.GetComponent<CharacterMovement>();
+        CharacterMovement p2MovementScript = Player2.GetComponent<CharacterMovement>();
 
         if (turnDecider == 1)
         {
@@ -60,7 +57,10 @@ public class EndTurn : MonoBehaviour
 
     public void ChangePlayerTurn()
     {
-        if(p1Turn == true)
+        CharacterMovement p1MovementScript = Player1.GetComponent<CharacterMovement>();
+        CharacterMovement p2MovementScript = Player2.GetComponent<CharacterMovement>();
+
+        if (p1Turn == true)
         {
             Debug.Log("It is now Player 2's turn.");
 

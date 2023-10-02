@@ -1186,8 +1186,6 @@ MonoBehaviour:
   p2DiceText: {fileID: 804008158}
   Player1: {fileID: 375091768}
   Player2: {fileID: 1161954835}
-  p1MovementScript: {fileID: 375091771}
-  p2MovementScript: {fileID: 1161954839}
 --- !u!1 &2042008455
 GameObject:
   m_ObjectHideFlags: 0

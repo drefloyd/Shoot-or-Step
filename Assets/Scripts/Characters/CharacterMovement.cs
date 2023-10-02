@@ -10,61 +10,61 @@ public class CharacterMovement : MonoBehaviour
 
     private void Update()
     {
-        if (EndTurn.p1Turn == true)
+        if (EndTurn.p1Turn == true)     // p1 and p2 have their own directions because all of p1's z values are the flipped versions of p2's
         {
-            if (DiceRoll.numMovesP1 > 0)
+            if (DiceRoll.numMoves > 0)
             {
                 // Flip the sprite based on input
 
                 if (Input.GetKeyDown(KeyCode.LeftArrow))
                 {
                     player.transform.rotation = Quaternion.Euler(0, 0, 180); // Face west
-                    --DiceRoll.numMovesP1;
+                    --DiceRoll.numMoves;
                 }
                 else if (Input.GetKeyDown(KeyCode.RightArrow))
                 {
                     player.transform.rotation = Quaternion.Euler(0, 0, 0); // Face east
-                    --DiceRoll.numMovesP1;
+                    --DiceRoll.numMoves;
                 }
 
                 else if (Input.GetKeyDown(KeyCode.DownArrow))
                 {
                     player.transform.rotation = Quaternion.Euler(0, 0, 270); // Face south
-                    --DiceRoll.numMovesP1;
+                    --DiceRoll.numMoves;
                 }
                 else if (Input.GetKeyDown(KeyCode.UpArrow))
                 {
                     player.transform.rotation = Quaternion.Euler(0, 0, 90); // Face north
-                    --DiceRoll.numMovesP1;
+                    --DiceRoll.numMoves;
                 }
             }
         }
         else
         {
-            if (DiceRoll.numMovesP2 > 0)
+            if (DiceRoll.numMoves > 0)
             {
                 // Flip the sprite based on input
 
                 if (Input.GetKeyDown(KeyCode.LeftArrow))
                 {
-                    player.transform.rotation = Quaternion.Euler(0, 0, 180); // Face west
-                    --DiceRoll.numMovesP2;
+                    player.transform.rotation = Quaternion.Euler(0, 0, 0); // Face west
+                    --DiceRoll.numMoves;
                 }
                 else if (Input.GetKeyDown(KeyCode.RightArrow))
                 {
-                    player.transform.rotation = Quaternion.Euler(0, 0, 0); // Face east
-                    --DiceRoll.numMovesP2;
+                    player.transform.rotation = Quaternion.Euler(0, 0, 180); // Face east
+                    --DiceRoll.numMoves;
                 }
 
                 else if (Input.GetKeyDown(KeyCode.DownArrow))
                 {
-                    player.transform.rotation = Quaternion.Euler(0, 0, 270); // Face south
-                    --DiceRoll.numMovesP2;
+                    player.transform.rotation = Quaternion.Euler(0, 0, 90); // Face south
+                    --DiceRoll.numMoves;
                 }
                 else if (Input.GetKeyDown(KeyCode.UpArrow))
                 {
-                    player.transform.rotation = Quaternion.Euler(0, 0, 90); // Face north
-                    --DiceRoll.numMovesP2;
+                    player.transform.rotation = Quaternion.Euler(0, 0, 270); // Face north
+                    --DiceRoll.numMoves;
                 }
             }
         }
