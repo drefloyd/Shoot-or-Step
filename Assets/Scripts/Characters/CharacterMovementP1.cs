@@ -17,11 +17,11 @@ public class CharacterMovement : MonoBehaviour
             if (DiceRoll.numMovesP1 > 0)
             {
                 // Flip the sprite based on input
-                
+
                 if (Input.GetKeyDown(KeyCode.LeftArrow))
                 {
                     player1.transform.rotation = Quaternion.Euler(0, 0, 180); // Face west
-                    --DiceRoll.numMovesP1 ;
+                    --DiceRoll.numMovesP1;
                 }
                 else if (Input.GetKeyDown(KeyCode.RightArrow))
                 {
@@ -39,10 +39,9 @@ public class CharacterMovement : MonoBehaviour
                     player1.transform.rotation = Quaternion.Euler(0, 0, 90); // Face north
                     --DiceRoll.numMovesP1;
                 }
-               
+
             }
         }
-
        
     }
 }
