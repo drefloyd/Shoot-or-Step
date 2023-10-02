@@ -27,23 +27,25 @@ public class DiceRoll : MonoBehaviour
         return numberRollded;
     }
 
-    public void ChangeDice1Text()
+    public void ChangeDiceText()
     {
         int diceValue = numberGenerator();
 
-        p1DiceText.text = diceValue.ToString();
+        if (EndTurn.p1Turn == true)
+        {
+            p1DiceText.text = diceValue.ToString();
 
-        numMovesP1 = diceValue;
-        p1DiceButton.interactable = false;      // locks it so there are no longer infinite rolls
-    }
+            numMovesP1 = diceValue;
 
-    public void ChangeDice2Text()
-    {
-        int diceValue = numberGenerator();
+            p1DiceButton.interactable = false;      // locks it so there are no longer infinite rolls
+        }
+        else
+        {
+            p2DiceText.text = diceValue.ToString();
 
-        p2DiceText.text = diceValue.ToString();
-        numMovesP2 = diceValue;
+            numMovesP2 = diceValue;
 
-        p2DiceButton.interactable = false;
+            p2DiceButton.interactable = false;
+        }
     }
 }
