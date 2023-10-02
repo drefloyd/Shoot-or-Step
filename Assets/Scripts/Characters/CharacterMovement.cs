@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class CharacterMovement : MonoBehaviour
 {
-    public GameObject player;
+    public GameObject player;  
 
     private void Update()
     {
