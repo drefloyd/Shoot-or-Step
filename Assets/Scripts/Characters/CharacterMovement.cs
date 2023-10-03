@@ -28,31 +28,44 @@ public class CharacterMovement : MonoBehaviour
                     if (this.direction!=ShootingDirection.West)
                     {
                         player.transform.rotation = Quaternion.Euler(0, 0, 180); // Face west
+                        --DiceRoll.numMoves;
+                        playerDiceText.text = DiceRoll.numMoves.ToString();
                     }
                     else
                     {
                         Vector3 currentPos = player.transform.position;
-                        player.transform.position = new Vector3(currentPos.x - 1, currentPos.y, currentPos.z);
+                        //make sure they are within bounds
+                        if (currentPos.x - 1 > -0.2f)
+                        {
+                            player.transform.position = new Vector3(currentPos.x - 1, currentPos.y, currentPos.z);
+                            --DiceRoll.numMoves;
+                            playerDiceText.text = DiceRoll.numMoves.ToString();
+                        }
                     }
                     this.direction = ShootingDirection.West;
                     BulletSpawnPoint.transform.rotation = Quaternion.Euler(0, 0, 180); // Face west
-                    --DiceRoll.numMoves;
-                    playerDiceText.text = DiceRoll.numMoves.ToString();
+                    
                 }
                 else if (Input.GetKeyDown(KeyCode.RightArrow))
                 {
                     if (this.direction != ShootingDirection.East)
                     {
                         player.transform.rotation = Quaternion.Euler(0, 0, 0); // Face east
+                        --DiceRoll.numMoves;
+                        playerDiceText.text = DiceRoll.numMoves.ToString();
                     }
                     else{
                         Vector3 currentPos = player.transform.position;
-                       player.transform.position = new Vector3(currentPos.x + 1, currentPos.y, currentPos.z);
+                        if (currentPos.x + 1 < 10.9f)
+                        {
+                            player.transform.position = new Vector3(currentPos.x + 1, currentPos.y, currentPos.z);
+                            --DiceRoll.numMoves;
+                            playerDiceText.text = DiceRoll.numMoves.ToString();
+                        }
                     }
                     this.direction = ShootingDirection.East;
                     BulletSpawnPoint.transform.rotation = Quaternion.Euler(0, 0, 0); // Face east
-                    --DiceRoll.numMoves;
-                    playerDiceText.text = DiceRoll.numMoves.ToString();
+                    
                 }
 
                 else if (Input.GetKeyDown(KeyCode.DownArrow))
@@ -60,32 +73,44 @@ public class CharacterMovement : MonoBehaviour
                     if (this.direction != ShootingDirection.South)
                     {
                         player.transform.rotation = Quaternion.Euler(0, 0, 270); // Face south
-                   }
+                        --DiceRoll.numMoves;
+                        playerDiceText.text = DiceRoll.numMoves.ToString();
+                    }
                    else
                     {
                         Vector3 currentPos = player.transform.position;
-                        player.transform.position = new Vector3(currentPos.x, currentPos.y - 1, currentPos.z);
+                        if (currentPos.y - 1 > -0.2f)
+                        {
+                            player.transform.position = new Vector3(currentPos.x, currentPos.y - 1, currentPos.z);
+                            --DiceRoll.numMoves;
+                            playerDiceText.text = DiceRoll.numMoves.ToString();
+                        }
                     }
                     this.direction = ShootingDirection.South;
                     BulletSpawnPoint.transform.rotation = Quaternion.Euler(0, 0, 270); // Face south
-                    --DiceRoll.numMoves;
-                    playerDiceText.text = DiceRoll.numMoves.ToString();
+                    
                 }
                 else if (Input.GetKeyDown(KeyCode.UpArrow))
                 {
                     if (this.direction != ShootingDirection.North)
                     {
                         player.transform.rotation = Quaternion.Euler(0, 0, 90); // Face north
+                        --DiceRoll.numMoves;
+                        playerDiceText.text = DiceRoll.numMoves.ToString();
                     }
                     else
                     {
                         Vector3 currentPos = player.transform.position;
-                        player.transform.position = new Vector3(currentPos.x, currentPos.y + 1, currentPos.z);
+                        if (currentPos.y + 1 < 11.1f)
+                        {
+                            player.transform.position = new Vector3(currentPos.x, currentPos.y + 1, currentPos.z);
+                            --DiceRoll.numMoves;
+                            playerDiceText.text = DiceRoll.numMoves.ToString();
+                        }
                     }
                     this.direction = ShootingDirection.North;
                     BulletSpawnPoint.transform.rotation = Quaternion.Euler(0, 0, 90); // Face north
-                    --DiceRoll.numMoves;
-                    playerDiceText.text = DiceRoll.numMoves.ToString();
+                    
                 }
                 //BH Space bar to shoot for now. Should make this a button later
                 else if (Input.GetKeyDown(KeyCode.Space))
@@ -123,32 +148,44 @@ public class CharacterMovement : MonoBehaviour
                     if (this.direction != ShootingDirection.West)
                     {
                         player.transform.rotation = Quaternion.Euler(0, 0, 0); // Face west
+                        --DiceRoll.numMoves;
+                        playerDiceText.text = DiceRoll.numMoves.ToString();
                     }
                     else
                     {
                         Vector3 currentPos = player.transform.position;
-                        player.transform.position = new Vector3(currentPos.x - 1, currentPos.y, currentPos.z);
+                        if (currentPos.x - 1 > -0.2f)
+                        {
+                            player.transform.position = new Vector3(currentPos.x - 1, currentPos.y, currentPos.z);
+                            --DiceRoll.numMoves;
+                            playerDiceText.text = DiceRoll.numMoves.ToString();
+                        }
                     }
                     this.direction = ShootingDirection.West;
                     BulletSpawnPoint.transform.rotation = Quaternion.Euler(0, 0, 0); // Face west
-                    --DiceRoll.numMoves;
-                    playerDiceText.text = DiceRoll.numMoves.ToString();
+                    
                 }
                 else if (Input.GetKeyDown(KeyCode.RightArrow))
                 {
                     if (this.direction != ShootingDirection.East)
                     {
                         player.transform.rotation = Quaternion.Euler(0, 0, 180); // Face east
+                        --DiceRoll.numMoves;
+                        playerDiceText.text = DiceRoll.numMoves.ToString();
                     }
                     else
                     {
                         Vector3 currentPos = player.transform.position;
-                        player.transform.position = new Vector3(currentPos.x + 1, currentPos.y, currentPos.z);
+                        if (currentPos.x + 1 < 10.9f)
+                        {
+                            player.transform.position = new Vector3(currentPos.x + 1, currentPos.y, currentPos.z);
+                            --DiceRoll.numMoves;
+                            playerDiceText.text = DiceRoll.numMoves.ToString();
+                        }
                     }
                     this.direction = ShootingDirection.East;
                     BulletSpawnPoint.transform.rotation = Quaternion.Euler(0, 0, 180);
-                    --DiceRoll.numMoves;
-                    playerDiceText.text = DiceRoll.numMoves.ToString();
+                    
                 }
 
                 else if (Input.GetKeyDown(KeyCode.DownArrow))
@@ -156,32 +193,44 @@ public class CharacterMovement : MonoBehaviour
                     if (this.direction != ShootingDirection.South)
                     {
                         player.transform.rotation = Quaternion.Euler(0, 0, 90); // Face south
+                        --DiceRoll.numMoves;
+                        playerDiceText.text = DiceRoll.numMoves.ToString();
                     }
                     else
                     {
                         Vector3 currentPos = player.transform.position;
-                        player.transform.position = new Vector3(currentPos.x, currentPos.y - 1, currentPos.z);
+                        if (currentPos.y - 1 > -0.2f)
+                        {
+                            player.transform.position = new Vector3(currentPos.x, currentPos.y - 1, currentPos.z);
+                            --DiceRoll.numMoves;
+                            playerDiceText.text = DiceRoll.numMoves.ToString();
+                        }
                     }
                     this.direction = ShootingDirection.South;
                     BulletSpawnPoint.transform.rotation = Quaternion.Euler(0, 0, 90); // Face south
-                    --DiceRoll.numMoves;
-                    playerDiceText.text = DiceRoll.numMoves.ToString();
+                    
                 }
                 else if (Input.GetKeyDown(KeyCode.UpArrow))
                 {
                     if (this.direction != ShootingDirection.North)
                     {
                         player.transform.rotation = Quaternion.Euler(0, 0, 270); // Face north
+                        --DiceRoll.numMoves;
+                        playerDiceText.text = DiceRoll.numMoves.ToString();
                     }
                     else
                     {
                         Vector3 currentPos = player.transform.position;
-                        player.transform.position = new Vector3(currentPos.x, currentPos.y + 1, currentPos.z);
+                        if (currentPos.y + 1 < 11.1f)
+                        {
+                            player.transform.position = new Vector3(currentPos.x, currentPos.y + 1, currentPos.z);
+                            --DiceRoll.numMoves;
+                            playerDiceText.text = DiceRoll.numMoves.ToString();
+                        }
                     }
                     this.direction = ShootingDirection.North;
                     BulletSpawnPoint.transform.rotation = Quaternion.Euler(0, 0, 270); // Face north
-                    --DiceRoll.numMoves;
-                    playerDiceText.text = DiceRoll.numMoves.ToString();
+                    
                 }
                 //BH Space bar to shoot for now. Should make this a button later
                 else if (Input.GetKeyDown(KeyCode.Space))
