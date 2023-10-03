@@ -12,7 +12,7 @@ public class CharacterMovement : MonoBehaviour
     public ShootingDirection direction = ShootingDirection.East;    //BH This is the initial direction p1 is facing
     public Transform BulletSpawnPoint;
     public GameObject BulletPrefab;
-    public float BulletSpeed = 10;
+    [SerializeField] public float BulletSpeed = 10;
 
     private void Update()
     {
@@ -24,7 +24,7 @@ public class CharacterMovement : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.LeftArrow))
                 {
-                    if (player.transform.rotation.z != 180)
+                    if (this.direction!=ShootingDirection.West)
                     {
                         player.transform.rotation = Quaternion.Euler(0, 0, 180); // Face west
                     }
@@ -39,13 +39,13 @@ public class CharacterMovement : MonoBehaviour
                 }
                 else if (Input.GetKeyDown(KeyCode.RightArrow))
                 {
-                    if (player.transform.rotation.z != 0)
+                    if (this.direction != ShootingDirection.East)
                     {
                         player.transform.rotation = Quaternion.Euler(0, 0, 0); // Face east
                     }
                     else{
                         Vector3 currentPos = player.transform.position;
-                        player.transform.position = new Vector3(currentPos.x + 1, currentPos.y, currentPos.z);
+                       player.transform.position = new Vector3(currentPos.x + 1, currentPos.y, currentPos.z);
                     }
                     this.direction = ShootingDirection.East;
                     BulletSpawnPoint.transform.rotation = Quaternion.Euler(0, 0, 0); // Face east
@@ -54,22 +54,22 @@ public class CharacterMovement : MonoBehaviour
 
                 else if (Input.GetKeyDown(KeyCode.DownArrow))
                 {
-                    if (player.transform.rotation.z != 270)
+                    if (this.direction != ShootingDirection.South)
                     {
                         player.transform.rotation = Quaternion.Euler(0, 0, 270); // Face south
-                    }
-                    else
+                   }
+                   else
                     {
                         Vector3 currentPos = player.transform.position;
                         player.transform.position = new Vector3(currentPos.x, currentPos.y - 1, currentPos.z);
                     }
-                    this.direction = ShootingDirection.East;
+                    this.direction = ShootingDirection.South;
                     BulletSpawnPoint.transform.rotation = Quaternion.Euler(0, 0, 270); // Face south
                     --DiceRoll.numMoves;
                 }
                 else if (Input.GetKeyDown(KeyCode.UpArrow))
                 {
-                    if (player.transform.rotation.z != 90)
+                    if (this.direction != ShootingDirection.North)
                     {
                         player.transform.rotation = Quaternion.Euler(0, 0, 90); // Face north
                     }
@@ -78,7 +78,7 @@ public class CharacterMovement : MonoBehaviour
                         Vector3 currentPos = player.transform.position;
                         player.transform.position = new Vector3(currentPos.x, currentPos.y + 1, currentPos.z);
                     }
-                    this.direction = ShootingDirection.East;
+                    this.direction = ShootingDirection.North;
                     BulletSpawnPoint.transform.rotation = Quaternion.Euler(0, 0, 90); // Face north
                     --DiceRoll.numMoves;
                 }
@@ -114,7 +114,7 @@ public class CharacterMovement : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.LeftArrow))
                 {
-                    if (player.transform.rotation.z != 0)
+                    if (this.direction != ShootingDirection.West)
                     {
                         player.transform.rotation = Quaternion.Euler(0, 0, 0); // Face west
                     }
@@ -129,7 +129,7 @@ public class CharacterMovement : MonoBehaviour
                 }
                 else if (Input.GetKeyDown(KeyCode.RightArrow))
                 {
-                    if (player.transform.rotation.z != 180)
+                    if (this.direction != ShootingDirection.East)
                     {
                         player.transform.rotation = Quaternion.Euler(0, 0, 180); // Face east
                     }
@@ -145,7 +145,7 @@ public class CharacterMovement : MonoBehaviour
 
                 else if (Input.GetKeyDown(KeyCode.DownArrow))
                 {
-                    if (player.transform.rotation.z != 90)
+                    if (this.direction != ShootingDirection.South)
                     {
                         player.transform.rotation = Quaternion.Euler(0, 0, 90); // Face south
                     }
@@ -154,13 +154,13 @@ public class CharacterMovement : MonoBehaviour
                         Vector3 currentPos = player.transform.position;
                         player.transform.position = new Vector3(currentPos.x, currentPos.y - 1, currentPos.z);
                     }
-                    this.direction = ShootingDirection.East;
+                    this.direction = ShootingDirection.South;
                     BulletSpawnPoint.transform.rotation = Quaternion.Euler(0, 0, 90); // Face south
                     --DiceRoll.numMoves;
                 }
                 else if (Input.GetKeyDown(KeyCode.UpArrow))
                 {
-                    if (player.transform.rotation.z != 270)
+                    if (this.direction != ShootingDirection.North)
                     {
                         player.transform.rotation = Quaternion.Euler(0, 0, 270); // Face north
                     }
@@ -169,7 +169,7 @@ public class CharacterMovement : MonoBehaviour
                         Vector3 currentPos = player.transform.position;
                         player.transform.position = new Vector3(currentPos.x, currentPos.y + 1, currentPos.z);
                     }
-                    this.direction = ShootingDirection.East;
+                    this.direction = ShootingDirection.North;
                     BulletSpawnPoint.transform.rotation = Quaternion.Euler(0, 0, 270); // Face north
                     --DiceRoll.numMoves;
                 }
