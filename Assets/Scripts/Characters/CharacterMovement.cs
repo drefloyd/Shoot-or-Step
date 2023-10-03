@@ -13,6 +13,7 @@ public class CharacterMovement : MonoBehaviour
     public Transform BulletSpawnPoint;
     public GameObject BulletPrefab;
     [SerializeField] public float BulletSpeed = 10;
+    public Text playerDiceText;
 
     private void Update()
     {
@@ -36,6 +37,7 @@ public class CharacterMovement : MonoBehaviour
                     this.direction = ShootingDirection.West;
                     BulletSpawnPoint.transform.rotation = Quaternion.Euler(0, 0, 180); // Face west
                     --DiceRoll.numMoves;
+                    playerDiceText.text = DiceRoll.numMoves.ToString();
                 }
                 else if (Input.GetKeyDown(KeyCode.RightArrow))
                 {
@@ -50,6 +52,7 @@ public class CharacterMovement : MonoBehaviour
                     this.direction = ShootingDirection.East;
                     BulletSpawnPoint.transform.rotation = Quaternion.Euler(0, 0, 0); // Face east
                     --DiceRoll.numMoves;
+                    playerDiceText.text = DiceRoll.numMoves.ToString();
                 }
 
                 else if (Input.GetKeyDown(KeyCode.DownArrow))
@@ -66,6 +69,7 @@ public class CharacterMovement : MonoBehaviour
                     this.direction = ShootingDirection.South;
                     BulletSpawnPoint.transform.rotation = Quaternion.Euler(0, 0, 270); // Face south
                     --DiceRoll.numMoves;
+                    playerDiceText.text = DiceRoll.numMoves.ToString();
                 }
                 else if (Input.GetKeyDown(KeyCode.UpArrow))
                 {
@@ -81,6 +85,7 @@ public class CharacterMovement : MonoBehaviour
                     this.direction = ShootingDirection.North;
                     BulletSpawnPoint.transform.rotation = Quaternion.Euler(0, 0, 90); // Face north
                     --DiceRoll.numMoves;
+                    playerDiceText.text = DiceRoll.numMoves.ToString();
                 }
                 //BH Space bar to shoot for now. Should make this a button later
                 else if (Input.GetKeyDown(KeyCode.Space))
@@ -103,6 +108,7 @@ public class CharacterMovement : MonoBehaviour
                         bullet.GetComponent<Rigidbody2D>().velocity = BulletSpawnPoint.right * BulletSpeed;
                     }
                     --DiceRoll.numMoves;
+                    playerDiceText.text = DiceRoll.numMoves.ToString();
                 }
             }
         }
@@ -126,6 +132,7 @@ public class CharacterMovement : MonoBehaviour
                     this.direction = ShootingDirection.West;
                     BulletSpawnPoint.transform.rotation = Quaternion.Euler(0, 0, 0); // Face west
                     --DiceRoll.numMoves;
+                    playerDiceText.text = DiceRoll.numMoves.ToString();
                 }
                 else if (Input.GetKeyDown(KeyCode.RightArrow))
                 {
@@ -141,6 +148,7 @@ public class CharacterMovement : MonoBehaviour
                     this.direction = ShootingDirection.East;
                     BulletSpawnPoint.transform.rotation = Quaternion.Euler(0, 0, 180);
                     --DiceRoll.numMoves;
+                    playerDiceText.text = DiceRoll.numMoves.ToString();
                 }
 
                 else if (Input.GetKeyDown(KeyCode.DownArrow))
@@ -157,6 +165,7 @@ public class CharacterMovement : MonoBehaviour
                     this.direction = ShootingDirection.South;
                     BulletSpawnPoint.transform.rotation = Quaternion.Euler(0, 0, 90); // Face south
                     --DiceRoll.numMoves;
+                    playerDiceText.text = DiceRoll.numMoves.ToString();
                 }
                 else if (Input.GetKeyDown(KeyCode.UpArrow))
                 {
@@ -172,6 +181,7 @@ public class CharacterMovement : MonoBehaviour
                     this.direction = ShootingDirection.North;
                     BulletSpawnPoint.transform.rotation = Quaternion.Euler(0, 0, 270); // Face north
                     --DiceRoll.numMoves;
+                    playerDiceText.text = DiceRoll.numMoves.ToString();
                 }
                 //BH Space bar to shoot for now. Should make this a button later
                 else if (Input.GetKeyDown(KeyCode.Space))
@@ -194,6 +204,7 @@ public class CharacterMovement : MonoBehaviour
                         bullet.GetComponent<Rigidbody2D>().velocity = -BulletSpawnPoint.right * BulletSpeed;
                     }
                     --DiceRoll.numMoves;
+                    playerDiceText.text = DiceRoll.numMoves.ToString();
                 }
             }
         }

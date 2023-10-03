@@ -686,6 +686,7 @@ MonoBehaviour:
   BulletSpawnPoint: {fileID: 2075377830}
   BulletPrefab: {fileID: 5286546749751790166, guid: 1c602e2415d759c4c821e17b9e695e25, type: 3}
   BulletSpeed: 10
+  playerDiceText: {fileID: 278538605}
 --- !u!1 &412907946
 GameObject:
   m_ObjectHideFlags: 0
@@ -1262,6 +1263,7 @@ MonoBehaviour:
   BulletSpawnPoint: {fileID: 103516286}
   BulletPrefab: {fileID: 5286546749751790166, guid: 1c602e2415d759c4c821e17b9e695e25, type: 3}
   BulletSpeed: 10
+  playerDiceText: {fileID: 804008158}
 --- !u!1 &1204462199
 GameObject:
   m_ObjectHideFlags: 0
