@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 using static Shooting;
 
 public class CharacterMovement : MonoBehaviour
@@ -23,14 +24,29 @@ public class CharacterMovement : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.LeftArrow))
                 {
-                    player.transform.rotation = Quaternion.Euler(0, 0, 180); // Face west
+                    if (player.transform.rotation.z != 180)
+                    {
+                        player.transform.rotation = Quaternion.Euler(0, 0, 180); // Face west
+                    }
+                    else
+                    {
+                        Vector3 currentPos = player.transform.position;
+                        player.transform.position = new Vector3(currentPos.x - 1, currentPos.y, currentPos.z);
+                    }
                     this.direction = ShootingDirection.West;
                     BulletSpawnPoint.transform.rotation = Quaternion.Euler(0, 0, 180); // Face west
                     --DiceRoll.numMoves;
                 }
                 else if (Input.GetKeyDown(KeyCode.RightArrow))
                 {
-                    player.transform.rotation = Quaternion.Euler(0, 0, 0); // Face east
+                    if (player.transform.rotation.z != 0)
+                    {
+                        player.transform.rotation = Quaternion.Euler(0, 0, 0); // Face east
+                    }
+                    else{
+                        Vector3 currentPos = player.transform.position;
+                        player.transform.position = new Vector3(currentPos.x + 1, currentPos.y, currentPos.z);
+                    }
                     this.direction = ShootingDirection.East;
                     BulletSpawnPoint.transform.rotation = Quaternion.Euler(0, 0, 0); // Face east
                     --DiceRoll.numMoves;
@@ -38,14 +54,30 @@ public class CharacterMovement : MonoBehaviour
 
                 else if (Input.GetKeyDown(KeyCode.DownArrow))
                 {
-                    player.transform.rotation = Quaternion.Euler(0, 0, 270); // Face south
+                    if (player.transform.rotation.z != 270)
+                    {
+                        player.transform.rotation = Quaternion.Euler(0, 0, 270); // Face south
+                    }
+                    else
+                    {
+                        Vector3 currentPos = player.transform.position;
+                        player.transform.position = new Vector3(currentPos.x, currentPos.y - 1, currentPos.z);
+                    }
                     this.direction = ShootingDirection.East;
                     BulletSpawnPoint.transform.rotation = Quaternion.Euler(0, 0, 270); // Face south
                     --DiceRoll.numMoves;
                 }
                 else if (Input.GetKeyDown(KeyCode.UpArrow))
                 {
-                    player.transform.rotation = Quaternion.Euler(0, 0, 90); // Face north
+                    if (player.transform.rotation.z != 90)
+                    {
+                        player.transform.rotation = Quaternion.Euler(0, 0, 90); // Face north
+                    }
+                    else
+                    {
+                        Vector3 currentPos = player.transform.position;
+                        player.transform.position = new Vector3(currentPos.x, currentPos.y + 1, currentPos.z);
+                    }
                     this.direction = ShootingDirection.East;
                     BulletSpawnPoint.transform.rotation = Quaternion.Euler(0, 0, 90); // Face north
                     --DiceRoll.numMoves;
@@ -82,14 +114,30 @@ public class CharacterMovement : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.LeftArrow))
                 {
-                    player.transform.rotation = Quaternion.Euler(0, 0, 0); // Face west
+                    if (player.transform.rotation.z != 0)
+                    {
+                        player.transform.rotation = Quaternion.Euler(0, 0, 0); // Face west
+                    }
+                    else
+                    {
+                        Vector3 currentPos = player.transform.position;
+                        player.transform.position = new Vector3(currentPos.x - 1, currentPos.y, currentPos.z);
+                    }
                     this.direction = ShootingDirection.West;
                     BulletSpawnPoint.transform.rotation = Quaternion.Euler(0, 0, 0); // Face west
                     --DiceRoll.numMoves;
                 }
                 else if (Input.GetKeyDown(KeyCode.RightArrow))
                 {
-                    player.transform.rotation = Quaternion.Euler(0, 0, 180); // Face east
+                    if (player.transform.rotation.z != 180)
+                    {
+                        player.transform.rotation = Quaternion.Euler(0, 0, 180); // Face east
+                    }
+                    else
+                    {
+                        Vector3 currentPos = player.transform.position;
+                        player.transform.position = new Vector3(currentPos.x + 1, currentPos.y, currentPos.z);
+                    }
                     this.direction = ShootingDirection.East;
                     BulletSpawnPoint.transform.rotation = Quaternion.Euler(0, 0, 180);
                     --DiceRoll.numMoves;
@@ -97,14 +145,30 @@ public class CharacterMovement : MonoBehaviour
 
                 else if (Input.GetKeyDown(KeyCode.DownArrow))
                 {
-                    player.transform.rotation = Quaternion.Euler(0, 0, 90); // Face south
+                    if (player.transform.rotation.z != 90)
+                    {
+                        player.transform.rotation = Quaternion.Euler(0, 0, 90); // Face south
+                    }
+                    else
+                    {
+                        Vector3 currentPos = player.transform.position;
+                        player.transform.position = new Vector3(currentPos.x, currentPos.y - 1, currentPos.z);
+                    }
                     this.direction = ShootingDirection.East;
                     BulletSpawnPoint.transform.rotation = Quaternion.Euler(0, 0, 90); // Face south
                     --DiceRoll.numMoves;
                 }
                 else if (Input.GetKeyDown(KeyCode.UpArrow))
                 {
-                    player.transform.rotation = Quaternion.Euler(0, 0, 270); // Face north
+                    if (player.transform.rotation.z != 270)
+                    {
+                        player.transform.rotation = Quaternion.Euler(0, 0, 270); // Face north
+                    }
+                    else
+                    {
+                        Vector3 currentPos = player.transform.position;
+                        player.transform.position = new Vector3(currentPos.x, currentPos.y + 1, currentPos.z);
+                    }
                     this.direction = ShootingDirection.East;
                     BulletSpawnPoint.transform.rotation = Quaternion.Euler(0, 0, 270); // Face north
                     --DiceRoll.numMoves;
