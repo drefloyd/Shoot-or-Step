@@ -18,6 +18,9 @@ public class EndTurn : MonoBehaviour
     public GameObject Player1;
     public GameObject Player2;
 
+    public Button p1EndTurnButton;
+    public Button p2EndTurnButton;
+
     private void Start()
     {
         System.Random rnd = new System.Random();
@@ -38,6 +41,9 @@ public class EndTurn : MonoBehaviour
             p1MovementScript.enabled = true;
             p2MovementScript.enabled = false;
 
+            p1EndTurnButton.interactable = true;
+            p2EndTurnButton.interactable = false;
+
             Debug.Log("Player 1 goes first.");
         }
         else
@@ -50,6 +56,9 @@ public class EndTurn : MonoBehaviour
 
             p1MovementScript.enabled = false;
             p2MovementScript.enabled = true;
+
+            p1EndTurnButton.interactable = false;
+            p2EndTurnButton.interactable = true;
 
             Debug.Log("Player 2 goes first.");
         }
@@ -73,6 +82,17 @@ public class EndTurn : MonoBehaviour
             p1MovementScript.enabled = false;
             p2MovementScript.enabled = true;
 
+            if (DiceRoll.hasRolled == true)
+            {
+                p1EndTurnButton.interactable = false;
+                p2EndTurnButton.interactable = true;
+                DiceRoll.hasRolled = false;
+            }
+            else if (DiceRoll.hasRolled == false)
+            {
+                p1EndTurnButton.interactable = false;
+                p2EndTurnButton.interactable = true;
+            }
             p1DiceText.text = "P1 Dice";
         }
         else
@@ -88,6 +108,17 @@ public class EndTurn : MonoBehaviour
             p1MovementScript.enabled = true;
             p2MovementScript.enabled = false;
 
+            if (DiceRoll.hasRolled == true)
+            {
+                p1EndTurnButton.interactable = true;
+                p2EndTurnButton.interactable = false;
+                DiceRoll.hasRolled = false;
+            }
+            else if(DiceRoll.hasRolled == false)
+            {
+                p1EndTurnButton.interactable = true;
+                p2EndTurnButton.interactable = false;
+            }
             p2DiceText.text = "P2 Dice";
         }
     }

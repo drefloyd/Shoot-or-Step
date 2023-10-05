@@ -17,6 +17,8 @@ public class DiceRoll : MonoBehaviour
 
     public static int numMoves;
 
+    public static bool hasRolled = false;
+
     public int numberGenerator()
     {
         System.Random rnd = new System.Random();
@@ -37,6 +39,8 @@ public class DiceRoll : MonoBehaviour
             numMoves = diceValue;
 
             p1DiceButton.interactable = false;      // locks it so there are no longer infinite rolls
+
+            hasRolled = true;
         }
         else
         {
@@ -45,6 +49,8 @@ public class DiceRoll : MonoBehaviour
             numMoves = diceValue;
 
             p2DiceButton.interactable = false;
+
+            hasRolled = true;
         }
     }
 }
