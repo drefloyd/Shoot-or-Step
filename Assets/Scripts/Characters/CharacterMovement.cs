@@ -14,6 +14,7 @@ public class CharacterMovement : MonoBehaviour
     public GameObject BulletPrefab;
     [SerializeField] public float BulletSpeed = 10;
     public Text playerDiceText;
+    public BoxCollider2D playerBody;
 
     private void Update()
     {
@@ -35,7 +36,7 @@ public class CharacterMovement : MonoBehaviour
                     {
                         Vector3 currentPos = player.transform.position;
                         //make sure they are within bounds
-                        if (currentPos.x - 1 > -0.2f)
+                        if (playerBody.Cast(Vector2.left, new RaycastHit2D[2], 1) == 0)
                         {
                             player.transform.position = new Vector3(currentPos.x - 1, currentPos.y, currentPos.z);
                             --DiceRoll.numMoves;
@@ -56,7 +57,7 @@ public class CharacterMovement : MonoBehaviour
                     }
                     else{
                         Vector3 currentPos = player.transform.position;
-                        if (currentPos.x + 1 < 10.9f)
+                        if (playerBody.Cast(Vector2.right, new RaycastHit2D[2], 1) == 0)
                         {
                             player.transform.position = new Vector3(currentPos.x + 1, currentPos.y, currentPos.z);
                             --DiceRoll.numMoves;
@@ -79,7 +80,7 @@ public class CharacterMovement : MonoBehaviour
                    else
                     {
                         Vector3 currentPos = player.transform.position;
-                        if (currentPos.y - 1 > -0.2f)
+                        if (playerBody.Cast(Vector2.down, new RaycastHit2D[2], 1) == 0)
                         {
                             player.transform.position = new Vector3(currentPos.x, currentPos.y - 1, currentPos.z);
                             --DiceRoll.numMoves;
@@ -101,7 +102,7 @@ public class CharacterMovement : MonoBehaviour
                     else
                     {
                         Vector3 currentPos = player.transform.position;
-                        if (currentPos.y + 1 < 11.1f)
+                        if (playerBody.Cast(Vector2.up, new RaycastHit2D[2], 1) == 0)
                         {
                             player.transform.position = new Vector3(currentPos.x, currentPos.y + 1, currentPos.z);
                             --DiceRoll.numMoves;
@@ -154,7 +155,7 @@ public class CharacterMovement : MonoBehaviour
                     else
                     {
                         Vector3 currentPos = player.transform.position;
-                        if (currentPos.x - 1 > -0.2f)
+                        if (playerBody.Cast(Vector2.left, new RaycastHit2D[2], 1) == 0)
                         {
                             player.transform.position = new Vector3(currentPos.x - 1, currentPos.y, currentPos.z);
                             --DiceRoll.numMoves;
@@ -176,7 +177,7 @@ public class CharacterMovement : MonoBehaviour
                     else
                     {
                         Vector3 currentPos = player.transform.position;
-                        if (currentPos.x + 1 < 10.9f)
+                        if (playerBody.Cast(Vector2.right, new RaycastHit2D[2], 1) == 0)
                         {
                             player.transform.position = new Vector3(currentPos.x + 1, currentPos.y, currentPos.z);
                             --DiceRoll.numMoves;
@@ -199,7 +200,7 @@ public class CharacterMovement : MonoBehaviour
                     else
                     {
                         Vector3 currentPos = player.transform.position;
-                        if (currentPos.y - 1 > -0.2f)
+                        if (playerBody.Cast(Vector2.down, new RaycastHit2D[2], 1) == 0f)
                         {
                             player.transform.position = new Vector3(currentPos.x, currentPos.y - 1, currentPos.z);
                             --DiceRoll.numMoves;
@@ -221,7 +222,7 @@ public class CharacterMovement : MonoBehaviour
                     else
                     {
                         Vector3 currentPos = player.transform.position;
-                        if (currentPos.y + 1 < 11.1f)
+                        if (playerBody.Cast(Vector2.up, new RaycastHit2D[2], 1) == 0)
                         {
                             player.transform.position = new Vector3(currentPos.x, currentPos.y + 1, currentPos.z);
                             --DiceRoll.numMoves;
