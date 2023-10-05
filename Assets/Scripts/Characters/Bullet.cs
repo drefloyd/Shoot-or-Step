@@ -6,6 +6,11 @@ public class Bullet : MonoBehaviour
 {
     public float life = 3;
 
+    public GameObject leftWall;
+    public GameObject rightWall;
+    public GameObject topWall;
+    public GameObject bottomWall;
+
     private void Awake()
     {
         Destroy(gameObject, life);  
@@ -13,7 +18,14 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy(collision.gameObject);
-        Destroy(gameObject);
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+        }
     }
 }
