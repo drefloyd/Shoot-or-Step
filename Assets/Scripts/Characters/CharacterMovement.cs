@@ -15,6 +15,9 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] public float BulletSpeed = 10;
     public Text playerDiceText;
     public BoxCollider2D playerBody;
+    public AudioClip moveSound;
+    public AudioClip gunshotSound;
+    public AudioSource audiosource;
 
     private void Update()
     {
@@ -41,6 +44,7 @@ public class CharacterMovement : MonoBehaviour
                             player.transform.position = new Vector3(currentPos.x - 1, currentPos.y, currentPos.z);
                             --DiceRoll.numMoves;
                             playerDiceText.text = DiceRoll.numMoves.ToString();
+                            
                         }
                     }
                     this.direction = ShootingDirection.West;
@@ -135,6 +139,7 @@ public class CharacterMovement : MonoBehaviour
                     }
                     --DiceRoll.numMoves;
                     playerDiceText.text = DiceRoll.numMoves.ToString();
+                    audiosource.PlayOneShot(gunshotSound, 25);
                 }
             }
         }
@@ -255,6 +260,7 @@ public class CharacterMovement : MonoBehaviour
                     }
                     --DiceRoll.numMoves;
                     playerDiceText.text = DiceRoll.numMoves.ToString();
+                    audiosource.PlayOneShot(gunshotSound, 25);
                 }
             }
         }
