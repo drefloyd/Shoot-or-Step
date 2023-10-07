@@ -25,32 +25,30 @@ public class Bullet : MonoBehaviour
         {
             Destroy(gameObject);
             //Destroy(collision.gameObject);
-            bool respawnCollision = true;
             Tuple<int, int> gridXY = numberGenerator();
-            while(CheckRespawnCollision(collision.gameObject, gridXY) == true)
+            while(CheckRespawnCollision(gridXY) == true)
             {
                 gridXY = numberGenerator();
             }
             Respawn(collision.gameObject, gridXY);
         }
-        //else
-        //{
-        //    Destroy(collision.gameObject);
-        //    //Destroy(gameObject);
-        //}
     }
 
-    private bool CheckRespawnCollision(GameObject shotPlayer, Tuple<int, int> gridXY)
+    //BH check to make sure that the randomly selected respawn location is not on top of a player or a wall
+    private bool CheckRespawnCollision(Tuple<int, int> gridXY)
     {
         Vector3 shotPlayerRespawnPosition = new Vector3(gridXY.Item1, gridXY.Item2, 0);
         bool collision = false;
         GameObject[] allObjects = UnityEngine.Object.FindObjectsOfType<GameObject>();
+        //BH loop through all game objects. This is probably inefficient but the game is simple enough it shouldn't matter. Ideally would keep a running list of collidable objects. Maybe you can return that with LINQ?
         foreach (GameObject go in allObjects)
         {
             if (go.activeInHierarchy && (go.CompareTag("Player") || go.CompareTag("Wall")))
             {
+                //BH check to make sure the object has a collider
                 if (go.GetComponent<Collider2D>() != null)
                 {
+                    //BH get the distance between the player's respawn point and any other player or wall object
                     Bounds objectBoundary = go.GetComponent<Collider2D>().bounds;
                     float distance = Vector3.Distance(shotPlayerRespawnPosition, objectBoundary.center);
                     if (distance < 1)
@@ -62,12 +60,9 @@ public class Bullet : MonoBehaviour
             }
         }
         return collision;    
-
-
-        //        Bounds bound = shotPlayer.GetComponent<Collider2D>().bounds;
-        //var variable = shotPlayer.GetComponent<Collider2D>().
     }
 
+    //BH generate a random position on the grid board
     public Tuple<int, int> numberGenerator()
     {
         System.Random rnd = new System.Random();
@@ -78,15 +73,9 @@ public class Bullet : MonoBehaviour
         return new Tuple<int, int>(numberRolldedX, numberRolldedY);
     }
 
+    //BH move the shot player to the determined position
     public void Respawn(GameObject shotPlayer, Tuple<int, int> gridXY)
-    {
-        
-        //if (shotPlayer.collider.bounds.Contains(telePosition))//hittotest is the wall
-        //{
-        //    print("point is inside collider");
-        //}
-
-
+    {       
         shotPlayer.transform.position = new Vector3(gridXY.Item1, gridXY.Item2, 0);
     }
 }
