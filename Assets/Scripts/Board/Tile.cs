@@ -6,7 +6,6 @@ public class Tile : MonoBehaviour
 {
     [SerializeField] private Color normalColor, otherColor;
     [SerializeField] private SpriteRenderer renderedTile;
-    // Start is called before the first frame update
     public void Init(bool isOther)
     {
         if (!isOther)
