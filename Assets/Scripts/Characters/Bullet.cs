@@ -25,6 +25,10 @@ public class Bullet : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             Destroy(gameObject);
+            GameObject audioObject = GameObject.Find(outerWallsName);
+            audiosource = audioObject.GetComponent<AudioSource>();
+            AudioClip clip = Resources.Load<AudioClip>("takeDamageSound");
+            audiosource.PlayOneShot(clip, 25);
             //Destroy(collision.gameObject);
             Tuple<int, int> gridXY = numberGenerator();
             while(CheckRespawnCollision(gridXY) == true)
