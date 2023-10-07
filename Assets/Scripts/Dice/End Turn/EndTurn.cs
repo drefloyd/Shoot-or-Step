@@ -21,12 +21,9 @@ public class EndTurn : MonoBehaviour
     public Button p1EndTurnButton;
     public Button p2EndTurnButton;
 
-    public AudioSource audioSource;
     private void Start()
     {
         System.Random rnd = new System.Random();
-        audioSource.loop = true;
-        audioSource.Play();
 
         int turnDecider = rnd.Next(1, 3); // return 1 == p1 turn, 2 == p2 turn to start
 
