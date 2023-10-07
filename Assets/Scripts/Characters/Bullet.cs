@@ -12,8 +12,10 @@ public class Bullet : MonoBehaviour
     public GameObject rightWall;
     public GameObject topWall;
     public GameObject bottomWall;
-    public AudioSource audiosource;
+    private AudioSource audiosource;
+
     private string outerWallsName = "OutofBoundsWalls";
+    
     private void Awake()
     {
         Destroy(gameObject, life);
@@ -25,6 +27,10 @@ public class Bullet : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             Destroy(gameObject);
+            GameObject audioObject = GameObject.Find(outerWallsName);
+            audiosource = audioObject.GetComponent<AudioSource>();
+            AudioClip hitSound = Resources.Load<AudioClip>("takeDamageSound");
+            audiosource.PlayOneShot(hitSound, 100);
             //Destroy(collision.gameObject);
             Tuple<int, int> gridXY = numberGenerator();
             while(CheckRespawnCollision(gridXY) == true)
