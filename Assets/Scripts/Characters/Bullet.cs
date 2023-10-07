@@ -62,9 +62,10 @@ public class Bullet : MonoBehaviour
                 if (go.GetComponent<Collider2D>() != null)
                 {
                     //BH get the distance between the player's respawn point and any other player or wall object
+                    //BH TODO figure out a better way to handle distance calculation based on extents so walls can be longer than 3 squares
                     Bounds objectBoundary = go.GetComponent<Collider2D>().bounds;
                     float distance = Vector3.Distance(shotPlayerRespawnPosition, objectBoundary.center);
-                    if (distance < 1)
+                    if (distance < 1.2)
                     {
                         collision = true;
                         break;
