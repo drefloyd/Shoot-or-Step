@@ -24,6 +24,8 @@ public class DiceRoll : MonoBehaviour
         System.Random rnd = new System.Random();
 
         numberRollded = rnd.Next(0, 7); // Can return a 0, 1, 2, 3, 4, 5, 6
+        //BH for testing
+        numberRollded = 1000;
 
         return numberRollded;
     }

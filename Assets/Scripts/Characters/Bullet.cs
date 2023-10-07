@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Linq;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
@@ -24,7 +25,12 @@ public class Bullet : MonoBehaviour
         {
             Destroy(gameObject);
             //Destroy(collision.gameObject);
+            bool respawnCollision = true;
             Tuple<int, int> gridXY = numberGenerator();
+            while(CheckRespawnCollision(collision.gameObject, gridXY) == true)
+            {
+                gridXY = numberGenerator();
+            }
             Respawn(collision.gameObject, gridXY);
         }
         //else
@@ -32,6 +38,34 @@ public class Bullet : MonoBehaviour
         //    Destroy(collision.gameObject);
         //    //Destroy(gameObject);
         //}
+    }
+
+    private bool CheckRespawnCollision(GameObject shotPlayer, Tuple<int, int> gridXY)
+    {
+        Vector3 shotPlayerRespawnPosition = new Vector3(gridXY.Item1, gridXY.Item2, 0);
+        bool collision = false;
+        GameObject[] allObjects = UnityEngine.Object.FindObjectsOfType<GameObject>();
+        foreach (GameObject go in allObjects)
+        {
+            if (go.activeInHierarchy && (go.CompareTag("Player") || go.CompareTag("Wall")))
+            {
+                if (go.GetComponent<Collider2D>() != null)
+                {
+                    Bounds objectBoundary = go.GetComponent<Collider2D>().bounds;
+                    float distance = Vector3.Distance(shotPlayerRespawnPosition, objectBoundary.center);
+                    if (distance < 1)
+                    {
+                        collision = true;
+                        break;
+                    }
+                }
+            }
+        }
+        return collision;    
+
+
+        //        Bounds bound = shotPlayer.GetComponent<Collider2D>().bounds;
+        //var variable = shotPlayer.GetComponent<Collider2D>().
     }
 
     public Tuple<int, int> numberGenerator()
@@ -46,6 +80,13 @@ public class Bullet : MonoBehaviour
 
     public void Respawn(GameObject shotPlayer, Tuple<int, int> gridXY)
     {
+        
+        //if (shotPlayer.collider.bounds.Contains(telePosition))//hittotest is the wall
+        //{
+        //    print("point is inside collider");
+        //}
+
+
         shotPlayer.transform.position = new Vector3(gridXY.Item1, gridXY.Item2, 0);
     }
 }
