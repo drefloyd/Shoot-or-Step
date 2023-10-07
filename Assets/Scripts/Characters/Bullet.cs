@@ -18,14 +18,16 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Wall"))
+        //BH if the bullet hits a player, destroy the player and the bullet. Otherwise the bullet will bounce until its timer runs out
+        if (collision.gameObject.CompareTag("Player"))
         {
             Destroy(gameObject);
-        }
-        else
-        {
             Destroy(collision.gameObject);
-            Destroy(gameObject);
         }
+        //else
+        //{
+        //    Destroy(collision.gameObject);
+        //    //Destroy(gameObject);
+        //}
     }
 }
