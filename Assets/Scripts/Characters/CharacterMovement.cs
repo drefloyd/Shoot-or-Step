@@ -44,7 +44,8 @@ public class CharacterMovement : MonoBehaviour
                             player.transform.position = new Vector3(currentPos.x - 1, currentPos.y, currentPos.z);
                             --DiceRoll.numMoves;
                             playerDiceText.text = DiceRoll.numMoves.ToString();
-                            
+                            audiosource.PlayOneShot(moveSound, 25);
+
                         }
                     }
                     this.direction = ShootingDirection.West;
@@ -66,6 +67,7 @@ public class CharacterMovement : MonoBehaviour
                             player.transform.position = new Vector3(currentPos.x + 1, currentPos.y, currentPos.z);
                             --DiceRoll.numMoves;
                             playerDiceText.text = DiceRoll.numMoves.ToString();
+                            audiosource.PlayOneShot(moveSound, 25);
                         }
                     }
                     this.direction = ShootingDirection.East;
@@ -89,6 +91,7 @@ public class CharacterMovement : MonoBehaviour
                             player.transform.position = new Vector3(currentPos.x, currentPos.y - 1, currentPos.z);
                             --DiceRoll.numMoves;
                             playerDiceText.text = DiceRoll.numMoves.ToString();
+                            audiosource.PlayOneShot(moveSound, 25);
                         }
                     }
                     this.direction = ShootingDirection.South;
@@ -111,6 +114,7 @@ public class CharacterMovement : MonoBehaviour
                             player.transform.position = new Vector3(currentPos.x, currentPos.y + 1, currentPos.z);
                             --DiceRoll.numMoves;
                             playerDiceText.text = DiceRoll.numMoves.ToString();
+                            audiosource.PlayOneShot(moveSound, 25);
                         }
                     }
                     this.direction = ShootingDirection.North;
@@ -165,6 +169,7 @@ public class CharacterMovement : MonoBehaviour
                             player.transform.position = new Vector3(currentPos.x - 1, currentPos.y, currentPos.z);
                             --DiceRoll.numMoves;
                             playerDiceText.text = DiceRoll.numMoves.ToString();
+                            audiosource.PlayOneShot(moveSound, 25);
                         }
                     }
                     this.direction = ShootingDirection.West;
@@ -187,6 +192,7 @@ public class CharacterMovement : MonoBehaviour
                             player.transform.position = new Vector3(currentPos.x + 1, currentPos.y, currentPos.z);
                             --DiceRoll.numMoves;
                             playerDiceText.text = DiceRoll.numMoves.ToString();
+                            audiosource.PlayOneShot(moveSound, 25);
                         }
                     }
                     this.direction = ShootingDirection.East;
@@ -210,6 +216,7 @@ public class CharacterMovement : MonoBehaviour
                             player.transform.position = new Vector3(currentPos.x, currentPos.y - 1, currentPos.z);
                             --DiceRoll.numMoves;
                             playerDiceText.text = DiceRoll.numMoves.ToString();
+                            audiosource.PlayOneShot(moveSound, 25);
                         }
                     }
                     this.direction = ShootingDirection.South;
@@ -232,6 +239,7 @@ public class CharacterMovement : MonoBehaviour
                             player.transform.position = new Vector3(currentPos.x, currentPos.y + 1, currentPos.z);
                             --DiceRoll.numMoves;
                             playerDiceText.text = DiceRoll.numMoves.ToString();
+                            audiosource.PlayOneShot(moveSound, 25);
                         }
                     }
                     this.direction = ShootingDirection.North;
