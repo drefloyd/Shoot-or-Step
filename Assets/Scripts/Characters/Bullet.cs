@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,7 +14,7 @@ public class Bullet : MonoBehaviour
 
     private void Awake()
     {
-        Destroy(gameObject, life);  
+        Destroy(gameObject, life);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -22,12 +23,29 @@ public class Bullet : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             Destroy(gameObject);
-            Destroy(collision.gameObject);
+            //Destroy(collision.gameObject);
+            Tuple<int, int> gridXY = numberGenerator();
+            Respawn(collision.gameObject, gridXY);
         }
         //else
         //{
         //    Destroy(collision.gameObject);
         //    //Destroy(gameObject);
         //}
+    }
+
+    public Tuple<int, int> numberGenerator()
+    {
+        System.Random rnd = new System.Random();
+
+        int numberRolldedX = rnd.Next(1, 12);
+        int numberRolldedY = rnd.Next(1, 12);
+
+        return new Tuple<int, int>(numberRolldedX, numberRolldedY);
+    }
+
+    public void Respawn(GameObject shotPlayer, Tuple<int, int> gridXY)
+    {
+        shotPlayer.transform.position = new Vector3(gridXY.Item1, gridXY.Item2, 0);
     }
 }
