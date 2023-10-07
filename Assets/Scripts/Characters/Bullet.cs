@@ -12,7 +12,8 @@ public class Bullet : MonoBehaviour
     public GameObject rightWall;
     public GameObject topWall;
     public GameObject bottomWall;
-
+    public AudioSource audiosource;
+    private string outerWallsName = "OutofBoundsWalls";
     private void Awake()
     {
         Destroy(gameObject, life);
@@ -31,6 +32,12 @@ public class Bullet : MonoBehaviour
                 gridXY = numberGenerator();
             }
             Respawn(collision.gameObject, gridXY);
+        }
+        else
+        {
+            GameObject audioObject = GameObject.Find(outerWallsName);
+            audiosource = audioObject.GetComponent<AudioSource>();
+            audiosource.PlayOneShot(audiosource.clip, 25);
         }
     }
 
