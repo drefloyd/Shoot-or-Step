@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 using static Shooting;
 
 public class CharacterMovement : MonoBehaviour
 {
     public GameObject player;
-
     public ShootingDirection direction = ShootingDirection.East;    //BH This is the initial direction p1 is facing
     public Transform BulletSpawnPoint;
     public GameObject BulletPrefab;
@@ -18,6 +18,17 @@ public class CharacterMovement : MonoBehaviour
     public AudioClip moveSound;
     public AudioClip gunshotSound;
     public AudioSource audiosource;
+    public int maxHealth = 100;
+    public int currentHealth;
+    public healthBar healthBar;
+    public Text HealthText1;
+    public Text HealthText2;
+    
+    public void Start()
+    {
+        currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
+    }
 
     private void Update()
     {
@@ -25,8 +36,7 @@ public class CharacterMovement : MonoBehaviour
         {
             if (DiceRoll.numMoves > 0)
             {
-                // Flip the sprite based on input
-
+                // Flip the sprite based on input               
                 if (Input.GetKeyDown(KeyCode.LeftArrow))
                 {
                     if (this.direction!=ShootingDirection.West)
@@ -144,6 +154,8 @@ public class CharacterMovement : MonoBehaviour
                     --DiceRoll.numMoves;
                     playerDiceText.text = DiceRoll.numMoves.ToString();
                     audiosource.PlayOneShot(gunshotSound, 25);
+                   
+
                 }
             }
         }
@@ -270,7 +282,18 @@ public class CharacterMovement : MonoBehaviour
                     playerDiceText.text = DiceRoll.numMoves.ToString();
                     audiosource.PlayOneShot(gunshotSound, 25);
                 }
+                
             }
+        }
+        
+    }
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;   
+        healthBar.SetHealth(currentHealth);
+        if (currentHealth<=0)
+        {
+            SceneManager.LoadSceneAsync(2);
         }
     }
 }

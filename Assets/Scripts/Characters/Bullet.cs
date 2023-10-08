@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
+using UnityEngine.UIElements;
 using System.Xml.Linq;
 using UnityEngine;
 
@@ -13,6 +15,8 @@ public class Bullet : MonoBehaviour
     public GameObject topWall;
     public GameObject bottomWall;
     public AudioSource audiosource;
+    CharacterMovement characterMovement;
+    
     private string outerWallsName = "OutofBoundsWalls";
     private void Awake()
     {
@@ -26,6 +30,7 @@ public class Bullet : MonoBehaviour
         {
             Destroy(gameObject);
             GameObject audioObject = GameObject.Find(outerWallsName);
+            //TakeDamage(20);
             audiosource = audioObject.GetComponent<AudioSource>();
             AudioClip clip = Resources.Load<AudioClip>("takeDamageSound");
             audiosource.PlayOneShot(clip, 25);
@@ -35,6 +40,9 @@ public class Bullet : MonoBehaviour
             {
                 gridXY = numberGenerator();
             }
+            characterMovement=FindObjectOfType<CharacterMovement>();
+            characterMovement.TakeDamage(20);
+            characterMovement.HealthText1.text=characterMovement.currentHealth+"%";
             Respawn(collision.gameObject, gridXY);
         }
         else
@@ -86,7 +94,10 @@ public class Bullet : MonoBehaviour
 
     //BH move the shot player to the determined position
     public void Respawn(GameObject shotPlayer, Tuple<int, int> gridXY)
-    {       
+    {
+
         shotPlayer.transform.position = new Vector3(gridXY.Item1, gridXY.Item2, 0);
+
     }
+   
 }
