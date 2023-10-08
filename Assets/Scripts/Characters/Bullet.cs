@@ -16,7 +16,7 @@ public class Bullet : MonoBehaviour
     public GameObject bottomWall;
     public AudioSource audiosource;
     CharacterMovement characterMovement;
-    
+    Health HealthBar;
     private string outerWallsName = "OutofBoundsWalls";
     private void Awake()
     {
@@ -40,9 +40,8 @@ public class Bullet : MonoBehaviour
             {
                 gridXY = numberGenerator();
             }
-            characterMovement=FindObjectOfType<CharacterMovement>();
-            characterMovement.TakeDamage(20);
-            characterMovement.HealthText1.text=characterMovement.currentHealth+"%";
+            HealthBar=FindObjectOfType<Health>();
+            HealthBar.TakeDamage(20);
             Respawn(collision.gameObject, gridXY);
         }
         else

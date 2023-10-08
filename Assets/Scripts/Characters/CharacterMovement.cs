@@ -18,17 +18,6 @@ public class CharacterMovement : MonoBehaviour
     public AudioClip moveSound;
     public AudioClip gunshotSound;
     public AudioSource audiosource;
-    public int maxHealth = 100;
-    public int currentHealth;
-    public healthBar healthBar;
-    public Text HealthText1;
-    public Text HealthText2;
-    
-    public void Start()
-    {
-        currentHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
-    }
 
     private void Update()
     {
@@ -60,7 +49,7 @@ public class CharacterMovement : MonoBehaviour
                     }
                     this.direction = ShootingDirection.West;
                     BulletSpawnPoint.transform.rotation = Quaternion.Euler(0, 0, 180); // Face west
-                    
+
                 }
                 else if (Input.GetKeyDown(KeyCode.RightArrow))
                 {
@@ -70,7 +59,8 @@ public class CharacterMovement : MonoBehaviour
                         --DiceRoll.numMoves;
                         playerDiceText.text = DiceRoll.numMoves.ToString();
                     }
-                    else{
+                    else
+                    {
                         Vector3 currentPos = player.transform.position;
                         if (playerBody.Cast(Vector2.right, new RaycastHit2D[2], 1) == 0)
                         {
@@ -82,7 +72,7 @@ public class CharacterMovement : MonoBehaviour
                     }
                     this.direction = ShootingDirection.East;
                     BulletSpawnPoint.transform.rotation = Quaternion.Euler(0, 0, 0); // Face east
-                    
+
                 }
 
                 else if (Input.GetKeyDown(KeyCode.DownArrow))
@@ -93,7 +83,7 @@ public class CharacterMovement : MonoBehaviour
                         --DiceRoll.numMoves;
                         playerDiceText.text = DiceRoll.numMoves.ToString();
                     }
-                   else
+                    else
                     {
                         Vector3 currentPos = player.transform.position;
                         if (playerBody.Cast(Vector2.down, new RaycastHit2D[2], 1) == 0)
@@ -106,7 +96,7 @@ public class CharacterMovement : MonoBehaviour
                     }
                     this.direction = ShootingDirection.South;
                     BulletSpawnPoint.transform.rotation = Quaternion.Euler(0, 0, 270); // Face south
-                    
+
                 }
                 else if (Input.GetKeyDown(KeyCode.UpArrow))
                 {
@@ -129,7 +119,7 @@ public class CharacterMovement : MonoBehaviour
                     }
                     this.direction = ShootingDirection.North;
                     BulletSpawnPoint.transform.rotation = Quaternion.Euler(0, 0, 90); // Face north
-                    
+
                 }
                 //BH Space bar to shoot for now. Should make this a button later
                 else if (Input.GetKeyDown(KeyCode.Space))
@@ -154,7 +144,7 @@ public class CharacterMovement : MonoBehaviour
                     --DiceRoll.numMoves;
                     playerDiceText.text = DiceRoll.numMoves.ToString();
                     audiosource.PlayOneShot(gunshotSound, 25);
-                   
+
 
                 }
             }
@@ -186,7 +176,7 @@ public class CharacterMovement : MonoBehaviour
                     }
                     this.direction = ShootingDirection.West;
                     BulletSpawnPoint.transform.rotation = Quaternion.Euler(0, 0, 0); // Face west
-                    
+
                 }
                 else if (Input.GetKeyDown(KeyCode.RightArrow))
                 {
@@ -209,7 +199,7 @@ public class CharacterMovement : MonoBehaviour
                     }
                     this.direction = ShootingDirection.East;
                     BulletSpawnPoint.transform.rotation = Quaternion.Euler(0, 0, 180);
-                    
+
                 }
 
                 else if (Input.GetKeyDown(KeyCode.DownArrow))
@@ -233,7 +223,7 @@ public class CharacterMovement : MonoBehaviour
                     }
                     this.direction = ShootingDirection.South;
                     BulletSpawnPoint.transform.rotation = Quaternion.Euler(0, 0, 90); // Face south
-                    
+
                 }
                 else if (Input.GetKeyDown(KeyCode.UpArrow))
                 {
@@ -256,7 +246,7 @@ public class CharacterMovement : MonoBehaviour
                     }
                     this.direction = ShootingDirection.North;
                     BulletSpawnPoint.transform.rotation = Quaternion.Euler(0, 0, 270); // Face north
-                    
+
                 }
                 //BH Space bar to shoot for now. Should make this a button later
                 else if (Input.GetKeyDown(KeyCode.Space))
@@ -282,18 +272,10 @@ public class CharacterMovement : MonoBehaviour
                     playerDiceText.text = DiceRoll.numMoves.ToString();
                     audiosource.PlayOneShot(gunshotSound, 25);
                 }
-                
+
             }
         }
-        
-    }
-    public void TakeDamage(int damage)
-    {
-        currentHealth -= damage;   
-        healthBar.SetHealth(currentHealth);
-        if (currentHealth<=0)
-        {
-            SceneManager.LoadSceneAsync(2);
-        }
+
     }
 }
+
