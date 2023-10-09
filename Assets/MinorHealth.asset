@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a08323df602c6ff47aeaa8b14c15b616, type: 3}
   m_Name: MinorHealth
   m_EditorClassIdentifier: 
-  amount: 0
+  amount: -15
