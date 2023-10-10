@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.UIElements;
 using System.Xml.Linq;
 using UnityEngine;
+using Unity.VisualScripting;
 
 public class Bullet : MonoBehaviour
 {
@@ -14,10 +15,11 @@ public class Bullet : MonoBehaviour
     public GameObject rightWall;
     public GameObject topWall;
     public GameObject bottomWall;
+    
     public AudioSource audiosource;
-    CharacterMovement characterMovement;
-    Health HealthBar;
+
     private string outerWallsName = "OutofBoundsWalls";
+
     private void Awake()
     {
         Destroy(gameObject, life);
@@ -26,22 +28,46 @@ public class Bullet : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //BH if the bullet hits a player, destroy the player and the bullet. Otherwise the bullet will bounce until its timer runs out
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player1"))
         {
             Destroy(gameObject);
+
             GameObject audioObject = GameObject.Find(outerWallsName);
-            //TakeDamage(20);
             audiosource = audioObject.GetComponent<AudioSource>();
             AudioClip clip = Resources.Load<AudioClip>("takeDamageSound");
             audiosource.PlayOneShot(clip, 25);
-            //Destroy(collision.gameObject);
+
             Tuple<int, int> gridXY = numberGenerator();
+
             while(CheckRespawnCollision(gridXY) == true)
             {
                 gridXY = numberGenerator();
             }
-            HealthBar=FindObjectOfType<Health>();
-            HealthBar.TakeDamage(20);
+
+            GameObject player1 = GameObject.FindWithTag("Player1");
+            player1.GetComponent<Health>().TakeDamage(20);
+            
+            Respawn(collision.gameObject, gridXY);
+        }
+        if (collision.gameObject.CompareTag("Player2"))
+        {
+            Destroy(gameObject);
+           
+            GameObject audioObject = GameObject.Find(outerWallsName);
+            audiosource = audioObject.GetComponent<AudioSource>();
+            AudioClip clip = Resources.Load<AudioClip>("takeDamageSound");
+            audiosource.PlayOneShot(clip, 25);
+
+            Tuple<int, int> gridXY = numberGenerator();
+
+            while (CheckRespawnCollision(gridXY) == true)
+            {
+                gridXY = numberGenerator();
+            }
+
+            GameObject player2 = GameObject.FindWithTag("Player2");
+            player2.GetComponent<Health>().TakeDamage(20);
+            
             Respawn(collision.gameObject, gridXY);
         }
         else
@@ -61,7 +87,7 @@ public class Bullet : MonoBehaviour
         //BH loop through all game objects. This is probably inefficient but the game is simple enough it shouldn't matter. Ideally would keep a running list of collidable objects. Maybe you can return that with LINQ?
         foreach (GameObject go in allObjects)
         {
-            if (go.activeInHierarchy && (go.CompareTag("Player") || go.CompareTag("Wall")))
+            if (go.activeInHierarchy && (go.CompareTag("Player1") || go.CompareTag("Player2") || go.CompareTag("Wall")))
             {
                 //BH check to make sure the object has a collider
                 if (go.GetComponent<Collider2D>() != null)

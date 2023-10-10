@@ -15,6 +15,7 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] public float BulletSpeed = 10;
     public Text playerDiceText;
     public BoxCollider2D playerBody;
+
     public AudioClip moveSound;
     public AudioClip gunshotSound;
     public AudioSource audiosource;

@@ -6,7 +6,7 @@ using UnityEngine;
 public class HealthPowerUp : PowerupEffect
 {
     public int amount;
-    // Start is called before the first frame update
+
     public override void Apply(GameObject target)
     {
         target.GetComponent<Health>().currentHealth+=amount;
