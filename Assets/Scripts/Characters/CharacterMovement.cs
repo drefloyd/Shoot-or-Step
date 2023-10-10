@@ -39,7 +39,8 @@ public class CharacterMovement : MonoBehaviour
                     {
                         Vector3 currentPos = player.transform.position;
                         //make sure they are within bounds
-                        if (playerBody.Cast(Vector2.left, new RaycastHit2D[2], 1) == 0)
+                        RaycastHit2D[] results = new RaycastHit2D[1];
+                        if (playerBody.Cast(Vector2.left, results, 1) == 0 || (results[0].collider.CompareTag("PowerUp")))
                         {
                             player.transform.position = new Vector3(currentPos.x - 1, currentPos.y, currentPos.z);
                             --DiceRoll.numMoves;
@@ -63,7 +64,8 @@ public class CharacterMovement : MonoBehaviour
                     else
                     {
                         Vector3 currentPos = player.transform.position;
-                        if (playerBody.Cast(Vector2.right, new RaycastHit2D[2], 1) == 0)
+                        RaycastHit2D[] results = new RaycastHit2D[1];
+                        if (playerBody.Cast(Vector2.right, results, 1) == 0 || (results[0].collider.CompareTag("PowerUp")))
                         {
                             player.transform.position = new Vector3(currentPos.x + 1, currentPos.y, currentPos.z);
                             --DiceRoll.numMoves;
@@ -87,7 +89,8 @@ public class CharacterMovement : MonoBehaviour
                     else
                     {
                         Vector3 currentPos = player.transform.position;
-                        if (playerBody.Cast(Vector2.down, new RaycastHit2D[2], 1) == 0)
+                        RaycastHit2D[] results = new RaycastHit2D[1];
+                        if (playerBody.Cast(Vector2.down, results, 1) == 0 || (results[0].collider.CompareTag("PowerUp")))
                         {
                             player.transform.position = new Vector3(currentPos.x, currentPos.y - 1, currentPos.z);
                             --DiceRoll.numMoves;
@@ -110,7 +113,8 @@ public class CharacterMovement : MonoBehaviour
                     else
                     {
                         Vector3 currentPos = player.transform.position;
-                        if (playerBody.Cast(Vector2.up, new RaycastHit2D[2], 1) == 0)
+                        RaycastHit2D[] results = new RaycastHit2D[1];
+                        if (playerBody.Cast(Vector2.up, results, 1) == 0 || (results[0].collider.CompareTag("PowerUp")))
                         {
                             player.transform.position = new Vector3(currentPos.x, currentPos.y + 1, currentPos.z);
                             --DiceRoll.numMoves;
@@ -167,7 +171,8 @@ public class CharacterMovement : MonoBehaviour
                     else
                     {
                         Vector3 currentPos = player.transform.position;
-                        if (playerBody.Cast(Vector2.left, new RaycastHit2D[2], 1) == 0)
+                        RaycastHit2D[] results = new RaycastHit2D[1];
+                        if (playerBody.Cast(Vector2.left, results, 1) == 0 || (results[0].collider.CompareTag("PowerUp")))
                         {
                             player.transform.position = new Vector3(currentPos.x - 1, currentPos.y, currentPos.z);
                             --DiceRoll.numMoves;
@@ -190,7 +195,8 @@ public class CharacterMovement : MonoBehaviour
                     else
                     {
                         Vector3 currentPos = player.transform.position;
-                        if (playerBody.Cast(Vector2.right, new RaycastHit2D[2], 1) == 0)
+                        RaycastHit2D[] results = new RaycastHit2D[1];
+                        if (playerBody.Cast(Vector2.right, results, 1) == 0 || (results[0].collider.CompareTag("PowerUp")))
                         {
                             player.transform.position = new Vector3(currentPos.x + 1, currentPos.y, currentPos.z);
                             --DiceRoll.numMoves;
@@ -214,7 +220,8 @@ public class CharacterMovement : MonoBehaviour
                     else
                     {
                         Vector3 currentPos = player.transform.position;
-                        if (playerBody.Cast(Vector2.down, new RaycastHit2D[2], 1) == 0f)
+                        RaycastHit2D[] results = new RaycastHit2D[1];
+                        if (playerBody.Cast(Vector2.down, results, 1) == 0 || (results[0].collider.CompareTag("PowerUp")))
                         {
                             player.transform.position = new Vector3(currentPos.x, currentPos.y - 1, currentPos.z);
                             --DiceRoll.numMoves;
@@ -237,7 +244,8 @@ public class CharacterMovement : MonoBehaviour
                     else
                     {
                         Vector3 currentPos = player.transform.position;
-                        if (playerBody.Cast(Vector2.up, new RaycastHit2D[2], 1) == 0)
+                        RaycastHit2D[] results = new RaycastHit2D[1];
+                        if (playerBody.Cast(Vector2.up, results, 1) == 0 || (results[0].collider.CompareTag("PowerUp")))
                         {
                             player.transform.position = new Vector3(currentPos.x, currentPos.y + 1, currentPos.z);
                             --DiceRoll.numMoves;

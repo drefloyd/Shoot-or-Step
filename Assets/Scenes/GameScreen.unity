@@ -4183,6 +4183,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HealthPowerUp
       objectReference: {fileID: 0}
+    - target: {fileID: 8155616349294946684, guid: f4aab12eb3bd05a468b2a4fb7294dab1, type: 3}
+      propertyPath: m_TagString
+      value: PowerUp
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1612344364201649321, guid: f4aab12eb3bd05a468b2a4fb7294dab1, type: 3}
     m_RemovedGameObjects: []
@@ -26572,6 +26576,10 @@ PrefabInstance:
     - target: {fileID: 8155616349294946684, guid: f4aab12eb3bd05a468b2a4fb7294dab1, type: 3}
       propertyPath: m_Name
       value: HealthPowerUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8155616349294946684, guid: f4aab12eb3bd05a468b2a4fb7294dab1, type: 3}
+      propertyPath: m_TagString
+      value: PowerUp
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1612344364201649321, guid: f4aab12eb3bd05a468b2a4fb7294dab1, type: 3}
