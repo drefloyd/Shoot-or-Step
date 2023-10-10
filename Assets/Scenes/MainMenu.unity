@@ -541,17 +541,17 @@ MonoBehaviour:
   m_text: '- Click the dice roller to get your action total
 
     - Use the arrow
-    keys to move
+    keys to move or change directions
 
     - Hit Spacebar to shoot
 
-    - Use cover and powerups to aid
-    you in battle
+    - Use cover
+    and powerups to aid you in battle
 
-    - Hit the end turn button when you are out of moves
+    - Hit the end turn button when you are
+    out of moves
 
-    -
-    And be the last man standing by any means neccessary!'
+    - And be the last man standing by any means neccessary!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
