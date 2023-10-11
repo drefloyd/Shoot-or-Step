@@ -95,7 +95,7 @@ public class Bullet : MonoBehaviour
                     //BH get the distance between the player's respawn point and any other player or wall object
                     Bounds objectBoundary = go.GetComponent<Collider2D>().bounds;
                     float distance = Vector3.Distance(shotPlayerRespawnPosition, objectBoundary.center);
-                    if (distance < 1)
+                    if (distance < 2)
                     {
                         collision = true;
                         break;
