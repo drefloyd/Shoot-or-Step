@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class HealthPowerUp : MonoBehaviour
 {
@@ -10,17 +11,22 @@ public class HealthPowerUp : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player1"))
         {
-            Destroy(gameObject);
-
             GameObject player1 = GameObject.FindWithTag("Player1");
-            player1.GetComponent<Health>().AddHealth(20);
+            if (player1.GetComponent<Health>().currentHealth < 100)
+            {
+                Destroy(gameObject);
+                player1.GetComponent<Health>().AddHealth(20);
+            }
         }
-        else if(collision.gameObject.CompareTag("Player2"))
+        else if (collision.gameObject.CompareTag("Player2"))
         {
-            Destroy(gameObject);
-
             GameObject player2 = GameObject.FindWithTag("Player2");
-            player2.GetComponent<Health>().AddHealth(20);
+
+            if (player2.GetComponent<Health>().currentHealth < 100)
+            {
+                Destroy(gameObject);
+                player2.GetComponent<Health>().AddHealth(20);
+            }
         }
     }
 }
