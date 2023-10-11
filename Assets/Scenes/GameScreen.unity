@@ -4137,15 +4137,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4448780510547750079, guid: f4aab12eb3bd05a468b2a4fb7294dab1, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7352123930100609679, guid: f4aab12eb3bd05a468b2a4fb7294dab1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.2548547
+      value: 6.23
       objectReference: {fileID: 0}
     - target: {fileID: 7352123930100609679, guid: f4aab12eb3bd05a468b2a4fb7294dab1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.7798204
+      value: -1.1
       objectReference: {fileID: 0}
     - target: {fileID: 7352123930100609679, guid: f4aab12eb3bd05a468b2a4fb7294dab1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -13654,7 +13654,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc056105110e6464b9c0277a3c535c9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerupEffect: {fileID: 11400000, guid: f5049861dfefe0446a8b3b983e390e5b, type: 2}
 --- !u!1 &1127166309
 GameObject:
   m_ObjectHideFlags: 0
@@ -17067,7 +17066,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc056105110e6464b9c0277a3c535c9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerupEffect: {fileID: 11400000, guid: 668e859f8f4cb504591ebb4eb4474db4, type: 2}
 --- !u!1 &1331221488
 GameObject:
   m_ObjectHideFlags: 0
@@ -17183,7 +17181,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1332431474
 Transform:
   m_ObjectHideFlags: 0
@@ -26531,15 +26529,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4448780510547750079, guid: f4aab12eb3bd05a468b2a4fb7294dab1, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7352123930100609679, guid: f4aab12eb3bd05a468b2a4fb7294dab1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.7861083
+      value: -2.69
       objectReference: {fileID: 0}
     - target: {fileID: 7352123930100609679, guid: f4aab12eb3bd05a468b2a4fb7294dab1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.8102865
+      value: 3.75
       objectReference: {fileID: 0}
     - target: {fileID: 7352123930100609679, guid: f4aab12eb3bd05a468b2a4fb7294dab1, type: 3}
       propertyPath: m_LocalPosition.z

@@ -25,7 +25,7 @@ public class DiceRoll : MonoBehaviour
 
         numberRollded = rnd.Next(0, 7); // Can return a 0, 1, 2, 3, 4, 5, 6
         //BH for testing
-        //numberRollded = 1000;
+        numberRollded = 1000;
 
         return numberRollded;
     }

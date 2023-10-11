@@ -1,14 +1,26 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-[CreateAssetMenu(menuName="Powerups/HealthDamage")]
-public class HealthPowerUp : PowerupEffect
+public class HealthPowerUp : MonoBehaviour
 {
-    public int amount;
-
-    public override void Apply(GameObject target)
+    public void OnCollisionEnter2D(Collision2D collision)
     {
-        target.GetComponent<Health>().currentHealth+=amount;
+        if (collision.gameObject.CompareTag("Player1"))
+        {
+            Destroy(gameObject);
+
+            GameObject player1 = GameObject.FindWithTag("Player1");
+            player1.GetComponent<Health>().AddHealth(20);
+        }
+        else if(collision.gameObject.CompareTag("Player2"))
+        {
+            Destroy(gameObject);
+
+            GameObject player2 = GameObject.FindWithTag("Player2");
+            player2.GetComponent<Health>().AddHealth(20);
+        }
     }
 }
