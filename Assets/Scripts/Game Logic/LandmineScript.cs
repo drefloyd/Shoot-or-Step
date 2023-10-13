@@ -10,13 +10,13 @@ public class LandmineScript : MonoBehaviour
         {
             GameObject player1 = GameObject.FindWithTag("Player1");
             Destroy(gameObject);
-            player1.GetComponent<Health>().TakeDamage(20);
+            player1.GetComponent<Health>().TakeDamage(25);
         }
         else if (collision.gameObject.CompareTag("Player2"))
         {
             GameObject player2 = GameObject.FindWithTag("Player2");
                 Destroy(gameObject);
-                player2.GetComponent<Health>().TakeDamage(20);
+                player2.GetComponent<Health>().TakeDamage(25);
             }
         }
     }

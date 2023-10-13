@@ -62,6 +62,33 @@ public class EndTurn : MonoBehaviour
 
             Debug.Log("Player 2 goes first.");
         }
+
+        if (Input.GetKeyDown("e"))
+        {
+            if (p1Turn == true)
+            {
+                p1EndTurnButton.onClick.Invoke();
+            }
+            else
+            {
+                p2EndTurnButton.onClick.Invoke();
+            }
+        }
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown("e"))
+        {
+            if (p1Turn == true)
+            {
+                p1EndTurnButton.onClick.Invoke();
+            }
+            else
+            {
+                p2EndTurnButton.onClick.Invoke();
+            }
+        }
     }
 
     public void ChangePlayerTurn()

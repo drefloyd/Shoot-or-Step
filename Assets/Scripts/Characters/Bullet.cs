@@ -45,7 +45,7 @@ public class Bullet : MonoBehaviour
             }
 
             GameObject player1 = GameObject.FindWithTag("Player1");
-            player1.GetComponent<Health>().TakeDamage(20);
+            player1.GetComponent<Health>().TakeDamage(25);
             
             Respawn(collision.gameObject, gridXY);
         }
@@ -66,7 +66,7 @@ public class Bullet : MonoBehaviour
             }
 
             GameObject player2 = GameObject.FindWithTag("Player2");
-            player2.GetComponent<Health>().TakeDamage(20);
+            player2.GetComponent<Health>().TakeDamage(25);
             
             Respawn(collision.gameObject, gridXY);
         }

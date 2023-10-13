@@ -13,7 +13,7 @@ public class HealthPowerUp : MonoBehaviour
             if (player1.GetComponent<Health>().currentHealth < 100)
             {
                 Destroy(gameObject);
-                player1.GetComponent<Health>().AddHealth(20);
+                player1.GetComponent<Health>().AddHealth(25);
             }
         }
         else if (collision.gameObject.CompareTag("Player2"))
@@ -23,7 +23,7 @@ public class HealthPowerUp : MonoBehaviour
             if (player2.GetComponent<Health>().currentHealth < 100)
             {
                 Destroy(gameObject);
-                player2.GetComponent<Health>().AddHealth(20);
+                player2.GetComponent<Health>().AddHealth(25);
             }
         }
     }
