@@ -548,8 +548,8 @@ MonoBehaviour:
     - Use cover
     and powerups to aid you in battle
 
-    - Hit the end turn button when you are
-    out of moves
+    - Hit the "e" key or  the end turn button
+    when you''re out of moves
 
     - And be the last man standing by any means neccessary!'
   m_isRightToLeft: 0
