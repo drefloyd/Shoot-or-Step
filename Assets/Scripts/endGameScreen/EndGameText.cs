@@ -15,9 +15,4 @@ public class EndGameText : MonoBehaviour
         winnerText.text = Health.winnerString;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
