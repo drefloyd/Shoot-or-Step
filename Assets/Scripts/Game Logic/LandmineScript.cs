@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class LandmineScript : MonoBehaviour
 {
     private string outerWallsName = "OutofBoundsWalls";
+    
+    public GameObject explosionObject;
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
@@ -15,6 +18,7 @@ public class LandmineScript : MonoBehaviour
             AudioSource audiosource = audioObject.GetComponent<AudioSource>();
             AudioClip clip = Resources.Load<AudioClip>("explosionSound");
             audiosource.PlayOneShot(clip, 25);
+            Instantiate(explosionObject, transform.position, Quaternion.identity);
             Destroy(gameObject);
             player1.GetComponent<Health>().TakeDamage(25);
         }
@@ -25,6 +29,7 @@ public class LandmineScript : MonoBehaviour
             AudioSource audiosource = audioObject.GetComponent<AudioSource>();
             AudioClip clip = Resources.Load<AudioClip>("explosionSound");
             audiosource.PlayOneShot(clip, 25);
+            Instantiate(explosionObject, transform.position, Quaternion.identity);
             Destroy(gameObject);
             player2.GetComponent<Health>().TakeDamage(25);
             }
