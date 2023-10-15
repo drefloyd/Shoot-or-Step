@@ -20,10 +20,13 @@ public class Bullet : MonoBehaviour
 
     private string outerWallsName = "OutofBoundsWalls";
 
+
     private void Awake()
     {
         Destroy(gameObject, life);
+        gameObject.layer = 7;
     }
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: -7527842248962980152}
   - component: {fileID: 6239418460484545044}
   - component: {fileID: -5289295190418537043}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Landmine
   m_TagString: PowerUp
   m_Icon: {fileID: 0}

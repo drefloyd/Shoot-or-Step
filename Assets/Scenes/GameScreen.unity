@@ -787,7 +787,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 69271895}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Landmines
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1595,7 +1595,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 103516286}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BulletSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4217,6 +4217,10 @@ PrefabInstance:
       value: HealthPowerUp2
       objectReference: {fileID: 0}
     - target: {fileID: 8155616349294946684, guid: f4aab12eb3bd05a468b2a4fb7294dab1, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8155616349294946684, guid: f4aab12eb3bd05a468b2a4fb7294dab1, type: 3}
       propertyPath: m_TagString
       value: PowerUp
       objectReference: {fileID: 0}
@@ -5174,7 +5178,7 @@ GameObject:
   - component: {fileID: 375091774}
   - component: {fileID: 375091775}
   - component: {fileID: 375091776}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player1
   m_TagString: Player1
   m_Icon: {fileID: 0}
@@ -13499,6 +13503,10 @@ PrefabInstance:
       value: Landmine 2
       objectReference: {fileID: 0}
     - target: {fileID: 5387220477763177628, guid: 4811f788ac9bed74fa761bf0add641e4, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5387220477763177628, guid: 4811f788ac9bed74fa761bf0add641e4, type: 3}
       propertyPath: m_TagString
       value: PowerUp
       objectReference: {fileID: 0}
@@ -14128,7 +14136,7 @@ GameObject:
   - component: {fileID: 1161954842}
   - component: {fileID: 1161954843}
   - component: {fileID: 1161954844}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player2
   m_TagString: Player2
   m_Icon: {fileID: 0}
@@ -17424,7 +17432,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1332431474}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PowerUps
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19408,6 +19416,10 @@ PrefabInstance:
     - target: {fileID: 5387220477763177628, guid: 4811f788ac9bed74fa761bf0add641e4, type: 3}
       propertyPath: m_Name
       value: Landmine 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5387220477763177628, guid: 4811f788ac9bed74fa761bf0add641e4, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5387220477763177628, guid: 4811f788ac9bed74fa761bf0add641e4, type: 3}
       propertyPath: m_TagString
@@ -26370,7 +26382,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2075377830}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BulletSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27454,6 +27466,10 @@ PrefabInstance:
     - target: {fileID: 8155616349294946684, guid: f4aab12eb3bd05a468b2a4fb7294dab1, type: 3}
       propertyPath: m_Name
       value: HealthPowerUp1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8155616349294946684, guid: f4aab12eb3bd05a468b2a4fb7294dab1, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8155616349294946684, guid: f4aab12eb3bd05a468b2a4fb7294dab1, type: 3}
       propertyPath: m_TagString
