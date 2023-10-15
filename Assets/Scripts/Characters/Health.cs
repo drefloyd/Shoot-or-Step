@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using System.Linq;
+using Unity.VisualScripting;
+using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
@@ -9,7 +12,8 @@ public class Health : MonoBehaviour
     public int currentHealth;
     public healthBar healthBar;
     public string playerTag;
-
+    public static string winnerString;
+   
     public void Start()
     {
         currentHealth = maxHealth;
@@ -23,11 +27,13 @@ public class Health : MonoBehaviour
 
         if (currentHealth<=0 && playerTag == "Player1")
         {
-            SceneManager.LoadSceneAsync(2);     // load "Player 1 wins screen"
+            winnerString = "PLAYER 2 WINS!";
+            SceneManager.LoadSceneAsync(2);    
         }
         else if (currentHealth <= 0 && playerTag == "Player2")
         {
-            SceneManager.LoadSceneAsync(2);     // load "Player 2 wins screen"
+            winnerString = "PLAYER 1 WINS!";
+            SceneManager.LoadSceneAsync(2);
         }
     }
     public void AddHealth(int damage)
