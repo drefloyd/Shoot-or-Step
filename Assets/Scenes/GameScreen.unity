@@ -27274,6 +27274,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cover 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7983178740813961273, guid: 7f6385186317706428d460d55ed1e610, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 1143287811160446213, guid: e894d3cd51411ab4dac2ebeeda08c8a3, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 1
