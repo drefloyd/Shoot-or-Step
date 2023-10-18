@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class DiceRoll : MonoBehaviour
 {
+    private string outerWallsName = "OutofBoundsWalls";
+
     [SerializeField] private int numberRollded;     // serialized for testing purposes if someone wants to give the die a specific value
 
     public Text p1DiceText;
@@ -54,5 +56,10 @@ public class DiceRoll : MonoBehaviour
 
             hasRolled = true;
         }
+
+        GameObject audioObject = GameObject.Find(outerWallsName);
+        AudioSource audiosource = audioObject.GetComponent<AudioSource>();
+        AudioClip clip = Resources.Load<AudioClip>("diceSound");
+        audiosource.PlayOneShot(clip, 25);
     }
 }
