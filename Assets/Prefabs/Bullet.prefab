@@ -161,7 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc78cc02ea27ab04c890871016ca883b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 3
+  life: 10
   leftWall: {fileID: 0}
   rightWall: {fileID: 0}
   topWall: {fileID: 0}
