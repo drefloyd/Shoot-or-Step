@@ -9,7 +9,7 @@ using Unity.VisualScripting;
 
 public class Bullet : MonoBehaviour
 {
-    public float life = 10;
+    public float life = 5;
 
     public GameObject leftWall;
     public GameObject rightWall;
