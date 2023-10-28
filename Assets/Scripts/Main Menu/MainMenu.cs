@@ -8,13 +8,20 @@ public class MainMenu : MonoBehaviour
    public void PlayGame()
     {
         System.Random rnd = new System.Random();
-        if (rnd.Next(0, 2) == 0)
+
+        int mapChoice = rnd.Next(3);
+
+        if (mapChoice == 0)
         {
             SceneManager.LoadSceneAsync(1);
         }
-        else
+        else if(mapChoice == 1)
         {
             SceneManager.LoadSceneAsync(3);
+        }
+        else
+        {
+            SceneManager.LoadSceneAsync(4);
         }
     }
     public void MainScreen()
