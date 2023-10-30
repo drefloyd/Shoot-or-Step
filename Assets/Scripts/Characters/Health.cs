@@ -27,12 +27,12 @@ public class Health : MonoBehaviour
 
         if (currentHealth<=0 && playerTag == "Player1")
         {
-            winnerString = "PLAYER 2 WINS!";
+            winnerString = "PLAYER 2";
             SceneManager.LoadSceneAsync(2);    
         }
         else if (currentHealth <= 0 && playerTag == "Player2")
         {
-            winnerString = "PLAYER 1 WINS!";
+            winnerString = "PLAYER 1";
             SceneManager.LoadSceneAsync(2);
         }
     }
