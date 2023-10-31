@@ -11,6 +11,8 @@ public class MainMenu : MonoBehaviour
 
         int mapChoice = rnd.Next(3);
 
+        Time.timeScale = 1f;
+
         if (mapChoice == 0)
         {
             SceneManager.LoadSceneAsync(1);
