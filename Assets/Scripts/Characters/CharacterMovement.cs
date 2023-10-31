@@ -27,7 +27,7 @@ public class CharacterMovement : MonoBehaviour
             if (DiceRoll.numMoves > 0)
             {
                 // Flip the sprite based on input               
-                if (Input.GetKeyDown(KeyCode.LeftArrow))
+                if (Input.GetKeyDown(KeyCode.LeftArrow) && pauseMenu.gameisPaused == false)
                 {
                     if (this.direction!=ShootingDirection.West)
                     {
@@ -53,7 +53,7 @@ public class CharacterMovement : MonoBehaviour
                     BulletSpawnPoint.transform.rotation = Quaternion.Euler(0, 0, 180); // Face west
 
                 }
-                else if (Input.GetKeyDown(KeyCode.RightArrow))
+                else if (Input.GetKeyDown(KeyCode.RightArrow) && pauseMenu.gameisPaused == false)
                 {
                     if (this.direction != ShootingDirection.East)
                     {
@@ -78,7 +78,7 @@ public class CharacterMovement : MonoBehaviour
 
                 }
 
-                else if (Input.GetKeyDown(KeyCode.DownArrow))
+                else if (Input.GetKeyDown(KeyCode.DownArrow) && pauseMenu.gameisPaused == false)
                 {
                     if (this.direction != ShootingDirection.South)
                     {
@@ -102,7 +102,7 @@ public class CharacterMovement : MonoBehaviour
                     BulletSpawnPoint.transform.rotation = Quaternion.Euler(0, 0, 270); // Face south
 
                 }
-                else if (Input.GetKeyDown(KeyCode.UpArrow))
+                else if (Input.GetKeyDown(KeyCode.UpArrow) && pauseMenu.gameisPaused == false)
                 {
                     if (this.direction != ShootingDirection.North)
                     {
@@ -127,7 +127,7 @@ public class CharacterMovement : MonoBehaviour
 
                 }
                 //BH Space bar to shoot for now. Should make this a button later
-                else if (Input.GetKeyDown(KeyCode.Space))
+                else if (Input.GetKeyDown(KeyCode.Space) && pauseMenu.gameisPaused == false)
                 {
                     var bullet = Instantiate(BulletPrefab, BulletSpawnPoint.position, BulletSpawnPoint.rotation);
                     if (this.direction == ShootingDirection.West)
@@ -160,7 +160,7 @@ public class CharacterMovement : MonoBehaviour
             {
                 // Flip the sprite based on input
 
-                if (Input.GetKeyDown(KeyCode.LeftArrow))
+                if (Input.GetKeyDown(KeyCode.LeftArrow) && pauseMenu.gameisPaused == false)
                 {
                     if (this.direction != ShootingDirection.West)
                     {
@@ -184,7 +184,7 @@ public class CharacterMovement : MonoBehaviour
                     BulletSpawnPoint.transform.rotation = Quaternion.Euler(0, 0, 0); // Face west
 
                 }
-                else if (Input.GetKeyDown(KeyCode.RightArrow))
+                else if (Input.GetKeyDown(KeyCode.RightArrow) && pauseMenu.gameisPaused == false)
                 {
                     if (this.direction != ShootingDirection.East)
                     {
@@ -209,7 +209,7 @@ public class CharacterMovement : MonoBehaviour
 
                 }
 
-                else if (Input.GetKeyDown(KeyCode.DownArrow))
+                else if (Input.GetKeyDown(KeyCode.DownArrow) && pauseMenu.gameisPaused == false)
                 {
                     if (this.direction != ShootingDirection.South)
                     {
@@ -233,7 +233,7 @@ public class CharacterMovement : MonoBehaviour
                     BulletSpawnPoint.transform.rotation = Quaternion.Euler(0, 0, 90); // Face south
 
                 }
-                else if (Input.GetKeyDown(KeyCode.UpArrow))
+                else if (Input.GetKeyDown(KeyCode.UpArrow) && pauseMenu.gameisPaused == false)
                 {
                     if (this.direction != ShootingDirection.North)
                     {
@@ -258,7 +258,7 @@ public class CharacterMovement : MonoBehaviour
 
                 }
                 //BH Space bar to shoot for now. Should make this a button later
-                else if (Input.GetKeyDown(KeyCode.Space))
+                else if (Input.GetKeyDown(KeyCode.Space) && pauseMenu.gameisPaused == false)
                 {
                     var bullet = Instantiate(BulletPrefab, BulletSpawnPoint.position, BulletSpawnPoint.rotation);
                     if (this.direction == ShootingDirection.West)

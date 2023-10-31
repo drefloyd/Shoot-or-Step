@@ -7,11 +7,13 @@ public class MainMenu : MonoBehaviour
     // Start is called before the first frame update
    public void PlayGame()
     {
+        Time.timeScale = 1f;
+
+        pauseMenu.gameisPaused = false;
+
         System.Random rnd = new System.Random();
 
         int mapChoice = rnd.Next(3);
-
-        Time.timeScale = 1f;
 
         if (mapChoice == 0)
         {
@@ -28,6 +30,7 @@ public class MainMenu : MonoBehaviour
     }
     public void MainScreen()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadSceneAsync(0);
     }
 }
