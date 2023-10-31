@@ -9,47 +9,29 @@ public class IndicatorScript : MonoBehaviour
     public Image p1IndicatorImage;
 
     public Transform player2;
-    public Image p2ImageToPosition;
-
-    public float blinkInterval = 1f;
-    private float timer = 0f;
+    public Image p2IndicatorImage;
 
     void Update()
     {
-        timer += Time.deltaTime;
-
-        float yOffset = 22f;    
 
         if (player1 != null && transform != null && EndTurn.p1Turn == true)
         {
-            Vector3 screenPosition = Camera.main.WorldToScreenPoint(player1.transform.position);
+            Vector3 offset = new Vector3(-.08f, .75f, 0f);
 
-            screenPosition.y += yOffset;
+            p1IndicatorImage.enabled = true;
+            p2IndicatorImage.enabled = false;
 
-            p1IndicatorImage.rectTransform.position = screenPosition;
-
-            if (timer >= blinkInterval)
-            {
-                p1IndicatorImage.enabled = !p1IndicatorImage.isActiveAndEnabled;
-
-                timer = 0f;
-            }
+            p1IndicatorImage.transform.position = Camera.main.WorldToScreenPoint(player1.position + offset);
         }
 
         if (player2 != null && transform != null && EndTurn.p2Turn == true)
         {
-            Vector3 screenPosition = Camera.main.WorldToScreenPoint(player2.transform.position);
+            Vector3 offset = new Vector3(.09f, .75f, 0f);
 
-            screenPosition.y += yOffset;
+            p1IndicatorImage.enabled = false;
+            p2IndicatorImage.enabled = true;
 
-            p2ImageToPosition.rectTransform.position = screenPosition;
-
-            if (timer >= blinkInterval)
-            {
-                p2ImageToPosition.enabled = !p2ImageToPosition.isActiveAndEnabled;
-
-                timer = 0f;
-            }
+            p2IndicatorImage.transform.position = Camera.main.WorldToScreenPoint(player2.position + offset);
         }
     }
 }
