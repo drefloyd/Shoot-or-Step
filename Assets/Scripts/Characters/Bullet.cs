@@ -10,7 +10,7 @@ using Unity.VisualScripting;
 public class Bullet : MonoBehaviour
 {
     public float life = 5;
-
+    public float timer = 0;
     public GameObject leftWall;
     public GameObject rightWall;
     public GameObject topWall;
@@ -23,7 +23,7 @@ public class Bullet : MonoBehaviour
 
     private void Awake()
     {
-        Destroy(gameObject, life);
+        //Destroy(gameObject, life);
         gameObject.layer = 7;
     }
 
@@ -79,6 +79,11 @@ public class Bullet : MonoBehaviour
             audiosource = audioObject.GetComponent<AudioSource>();
             audiosource.PlayOneShot(audiosource.clip, 25);
         }
+        //BH if the bullet has been alive more than 5 seconds destory it on its next collision but not in midair
+        if (timer > life)
+        {
+            Destroy(gameObject);
+        }
     }
 
     //BH check to make sure that the randomly selected respawn location is not on top of a player or a wall
@@ -126,6 +131,11 @@ public class Bullet : MonoBehaviour
 
         shotPlayer.transform.position = new Vector3(gridXY.Item1, gridXY.Item2, 0);
 
+    }
+
+    private void Update()
+    {
+        timer += Time.deltaTime;
     }
    
 }
