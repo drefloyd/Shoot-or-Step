@@ -3165,7 +3165,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\n\nThroughout the years\_their relationship  strained as\_their competitive
+  m_text: "\n\nThroughout the years\_their relationship strained as\_their competitive
     natures pushed each other to become more and more deadly. \n\n\n\n\nThis ultimately
     was the final blow to their friendship, now\_they want to settle once and for
     all who's the greatest mercenary of them both."
@@ -19058,7 +19058,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000030517578, y: -0.000015258789}
+  m_AnchoredPosition: {x: -0.000030517578, y: -0.000030517578}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1411114621
@@ -22249,9 +22249,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Two life-long friends grew up to be heavily feared mercenaries. \n\nThroughout
-    the years\_their relationship  strained as\_their competitive natures pushed
-    each other to become more and more deadly. \n\nTheir last mission pushed the
-    duo to the limit\_resulting in their first\_ever mission failure. \n\nThis ultimately
+    the years\_their relationship strained as\_their competitive natures pushed each
+    other to become more and more deadly. \n\nTheir last mission pushed the duo to
+    the limit\_resulting in their first\_ever mission failure. \n\nThis ultimately
     was the final blow to their friendship, now\_they want to settle once and for
     all who's the greatest mercenary of them both."
   m_isRightToLeft: 0

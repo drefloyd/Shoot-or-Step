@@ -325,7 +325,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\n\nThroughout the years\_their relationship  strained as\_their competitive
+  m_text: "\n\nThroughout the years\_their relationship strained as\_their competitive
     natures pushed each other to become more and more deadly. \n\n\n\n\nThis ultimately
     was the final blow to their friendship, now\_they want to settle once and for
     all who's the greatest mercenary of them both."
@@ -22518,9 +22518,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Two life-long friends grew up to be heavily feared mercenaries. \n\nThroughout
-    the years\_their relationship  strained as\_their competitive natures pushed
-    each other to become more and more deadly. \n\nTheir last mission pushed the
-    duo to the limit\_resulting in their first\_ever mission failure. \n\nThis ultimately
+    the years\_their relationship strained as\_their competitive natures pushed each
+    other to become more and more deadly. \n\nTheir last mission pushed the duo to
+    the limit\_resulting in their first\_ever mission failure. \n\nThis ultimately
     was the final blow to their friendship, now\_they want to settle once and for
     all who's the greatest mercenary of them both."
   m_isRightToLeft: 0
