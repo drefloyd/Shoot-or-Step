@@ -5355,7 +5355,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000061035156}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &469726363
@@ -18622,6 +18622,11 @@ MonoBehaviour:
   moveSound: {fileID: 8300000, guid: 5ffc518ea6c12a346810a8a24d1473be, type: 3}
   gunshotSound: {fileID: 8300000, guid: 331097e2d3009984cb152ef6d6c70ab0, type: 3}
   audiosource: {fileID: 1487687286}
+  spriteRenderer: {fileID: 0}
+  player1Sprite: {fileID: 21300000, guid: d02d9ae672e6ebd4eb964088b187b05b, type: 3}
+  player1SpriteHighlighted: {fileID: 21300000, guid: b43ed30853f8d3240b5ff2db8ba69346, type: 3}
+  player2Sprite: {fileID: 21300000, guid: 8bbbdb67155b3a6458885c05d8c9aca6, type: 3}
+  player2SpriteHighlighted: {fileID: 21300000, guid: 200fee5a4e259fd4391db37b15e38077, type: 3}
 --- !u!212 &1487687290
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -20047,6 +20052,11 @@ MonoBehaviour:
   moveSound: {fileID: 8300000, guid: 5ffc518ea6c12a346810a8a24d1473be, type: 3}
   gunshotSound: {fileID: 8300000, guid: 331097e2d3009984cb152ef6d6c70ab0, type: 3}
   audiosource: {fileID: 1602831749}
+  spriteRenderer: {fileID: 0}
+  player1Sprite: {fileID: 21300000, guid: d02d9ae672e6ebd4eb964088b187b05b, type: 3}
+  player1SpriteHighlighted: {fileID: 21300000, guid: b43ed30853f8d3240b5ff2db8ba69346, type: 3}
+  player2Sprite: {fileID: 21300000, guid: 8bbbdb67155b3a6458885c05d8c9aca6, type: 3}
+  player2SpriteHighlighted: {fileID: 21300000, guid: 200fee5a4e259fd4391db37b15e38077, type: 3}
 --- !u!212 &1602831753
 SpriteRenderer:
   m_ObjectHideFlags: 0

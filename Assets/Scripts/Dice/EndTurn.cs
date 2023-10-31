@@ -18,11 +18,16 @@ public class EndTurn : MonoBehaviour
     public GameObject Player1;
     public GameObject Player2;
 
+    public SpriteRenderer p1SpriteRenderer;
+    public SpriteRenderer p2SpriteRenderer;
+
     public Button p1EndTurnButton;
     public Button p2EndTurnButton;
 
     private void Start()
     {
+        p1SpriteRenderer = Player1.GetComponent<SpriteRenderer>();
+        p2SpriteRenderer = Player2.GetComponent<SpriteRenderer>();
         System.Random rnd = new System.Random();
 
         int turnDecider = rnd.Next(1, 3); // return 1 == p1 turn, 2 == p2 turn to start
@@ -98,6 +103,8 @@ public class EndTurn : MonoBehaviour
 
         if (p1Turn == true)
         {
+            //spriteRenderer.sprite = player1SpriteHighlighted;
+            p1SpriteRenderer.sprite = 
             Debug.Log("It is now Player 2's turn.");
 
             p1Turn = false;

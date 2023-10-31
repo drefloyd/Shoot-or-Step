@@ -20,12 +20,26 @@ public class CharacterMovement : MonoBehaviour
     public AudioClip gunshotSound;
     public AudioSource audiosource;
 
+    public SpriteRenderer spriteRenderer;
+    public Sprite player1Sprite;
+    public Sprite player1SpriteHighlighted;
+    public Sprite player2Sprite;
+    public Sprite player2SpriteHighlighted;
+
+    private void Start()
+    {
+        spriteRenderer = player.GetComponent<SpriteRenderer>();
+        //spriteRenderer.sprite = player1SpriteHighlighted;
+    }
+
     private void Update()
     {
         if (EndTurn.p1Turn == true)     // p1 and p2 have their own directions because all of p1's z values are the flipped versions of p2's
         {
+            //spriteRenderer.sprite = player1SpriteHighlighted;
             if (DiceRoll.numMoves > 0)
             {
+                
                 // Flip the sprite based on input               
                 if (Input.GetKeyDown(KeyCode.LeftArrow))
                 {
@@ -152,12 +166,17 @@ public class CharacterMovement : MonoBehaviour
 
 
                 }
+                
             }
+            //spriteRenderer.sprite = player1Sprite;
         }
+        
         else
         {
+            //spriteRenderer.sprite = player2SpriteHighlighted;
             if (DiceRoll.numMoves > 0)
             {
+                
                 // Flip the sprite based on input
 
                 if (Input.GetKeyDown(KeyCode.LeftArrow))
@@ -281,9 +300,14 @@ public class CharacterMovement : MonoBehaviour
                     playerDiceText.text = DiceRoll.numMoves.ToString();
                     audiosource.PlayOneShot(gunshotSound, 25);
                 }
-
+                
             }
         }
+        //spriteRenderer.sprite = player2Sprite;
+    }
+
+    void ChangeSprite()
+    {
 
     }
 }
