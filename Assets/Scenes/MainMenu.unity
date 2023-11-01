@@ -2760,7 +2760,8 @@ Animation:
   m_Enabled: 1
   serializedVersion: 3
   m_Animation: {fileID: 7400000, guid: cdcb3af9237a86a43aa5b250f6bc90b6, type: 2}
-  m_Animations: []
+  m_Animations:
+  - {fileID: 7400000, guid: cdcb3af9237a86a43aa5b250f6bc90b6, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -4245,16 +4246,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds: []
-  MusicSource: {fileID: 1555396368}
   SFXSource: {fileID: 1912621779}
-  menuMusic: {fileID: 8300000, guid: 641f21685ada7214299a9432aafe0312, type: 3}
   bullet: {fileID: 8300000, guid: acbcddfa77c046f479c04725a1455fd2, type: 3}
   moveSound: {fileID: 8300000, guid: 5ffc518ea6c12a346810a8a24d1473be, type: 3}
   gunshotSound: {fileID: 8300000, guid: 331097e2d3009984cb152ef6d6c70ab0, type: 3}
   explosion: {fileID: 8300000, guid: 8119f4b88d1987644ab1c9361f02b4ca, type: 3}
   powerUpPickup: {fileID: 8300000, guid: a1dbc62aa8f87414dbcb48d6c925da8f, type: 3}
   diceRoll: {fileID: 8300000, guid: 6c2057b0aea657444aed8baf61b944c1, type: 3}
-  background: {fileID: 8300000, guid: 7ab60fa4c4a57b242a1454a06fc8f794, type: 3}
   takeDamage: {fileID: 8300000, guid: d8cca83cf581d4f4699bbb2c4982ea5b, type: 3}
 --- !u!4 &1464928700
 Transform:
@@ -4273,11 +4271,6 @@ Transform:
   - {fileID: 1912621780}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &1555396368 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 8344829606721850204, guid: e3f69c2f37d2c1c45bef3ad32982f2c5, type: 3}
-  m_PrefabInstance: {fileID: 8439711954318237296}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1555396369 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3618249910997725495, guid: e3f69c2f37d2c1c45bef3ad32982f2c5, type: 3}
@@ -6082,8 +6075,8 @@ Transform:
   m_GameObject: {fileID: 2002065603}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.7, y: 0.48, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalPosition: {x: -2.35, y: 0.2, z: 0}
+  m_LocalScale: {x: 2.552927, y: 2.4162824, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
