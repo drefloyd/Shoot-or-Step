@@ -13,7 +13,11 @@ public class Health : MonoBehaviour
     public healthBar healthBar;
     public string playerTag;
     public static string winnerString;
-   
+    AudioManager audioManager;
+    private void Awake()
+    {
+        audioManager=GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
+    }
     public void Start()
     {
         currentHealth = maxHealth;
@@ -28,7 +32,7 @@ public class Health : MonoBehaviour
         if (currentHealth<=0 && playerTag == "Player1")
         {
             winnerString = "PLAYER 2";
-            SceneManager.LoadSceneAsync(2);    
+            SceneManager.LoadSceneAsync(2);
         }
         else if (currentHealth <= 0 && playerTag == "Player2")
         {
