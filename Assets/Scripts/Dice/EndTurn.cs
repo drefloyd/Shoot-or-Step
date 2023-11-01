@@ -64,14 +64,16 @@ public class EndTurn : MonoBehaviour
         }
 
         if (Input.GetKeyDown("e"))
-        {
-            if (p1Turn == true)
+        { if (Time.timeScale == 1f)
             {
-                p1EndTurnButton.onClick.Invoke();
-            }
-            else
-            {
-                p2EndTurnButton.onClick.Invoke();
+                if (p1Turn == true)
+                {
+                    p1EndTurnButton.onClick.Invoke();
+                }
+                else
+                {
+                    p2EndTurnButton.onClick.Invoke();
+                }
             }
         }
     }
@@ -80,13 +82,16 @@ public class EndTurn : MonoBehaviour
     {
         if (Input.GetKeyDown("e"))
         {
-            if (p1Turn == true)
+            if (Time.timeScale == 1f)
             {
-                p1EndTurnButton.onClick.Invoke();
-            }
-            else
-            {
-                p2EndTurnButton.onClick.Invoke();
+                if (p1Turn == true)
+                {
+                    p1EndTurnButton.onClick.Invoke();
+                }
+                else
+                {
+                    p2EndTurnButton.onClick.Invoke();
+                }
             }
         }
     }
