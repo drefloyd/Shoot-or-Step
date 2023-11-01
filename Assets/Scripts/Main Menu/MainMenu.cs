@@ -1,11 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
-    // Start is called before the first frame update
-   public void PlayGame()
+    AudioManager audioManager;
+    private void Awake()
+    {
+        audioManager=GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
+    }
+    public void Start()
+    {
+        audioManager.PlayMusic(audioManager.menuMusic);
+    }
+        // Start is called before the first frame update
+        public void PlayGame()
     {
         Time.timeScale = 1f;
 
@@ -18,19 +28,25 @@ public class MainMenu : MonoBehaviour
         if (mapChoice == 0)
         {
             SceneManager.LoadSceneAsync(1);
+            audioManager.PlayMusic(audioManager.background);
+
         }
         else if(mapChoice == 1)
         {
             SceneManager.LoadSceneAsync(3);
+            audioManager.PlayMusic(audioManager.background);
+
         }
         else
         {
             SceneManager.LoadSceneAsync(4);
+            audioManager.PlayMusic(audioManager.background);
         }
     }
     public void MainScreen()
     {
         Time.timeScale = 1f;
         SceneManager.LoadSceneAsync(0);
+        
     }
 }
