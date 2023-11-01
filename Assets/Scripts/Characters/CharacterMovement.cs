@@ -16,13 +16,10 @@ public class CharacterMovement : MonoBehaviour
     public Text playerDiceText;
     public BoxCollider2D playerBody;
 
+    public AudioClip moveSound;
+    public AudioClip gunshotSound;
+    public AudioSource audiosource;
 
-
-    AudioManager audioManager;
-    private void Awake()
-    {
-        audioManager=GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
-    }
     private void Update()
     {
         if (EndTurn.p1Turn == true)     // p1 and p2 have their own directions because all of p1's z values are the flipped versions of p2's
@@ -48,7 +45,7 @@ public class CharacterMovement : MonoBehaviour
                             player.transform.position = new Vector3(currentPos.x - 1, currentPos.y, currentPos.z);
                             --DiceRoll.numMoves;
                             playerDiceText.text = DiceRoll.numMoves.ToString();
-                            audioManager.PlaySFX(audioManager.moveSound);
+                            audiosource.PlayOneShot(moveSound, 25);
 
                         }
                     }
@@ -73,7 +70,7 @@ public class CharacterMovement : MonoBehaviour
                             player.transform.position = new Vector3(currentPos.x + 1, currentPos.y, currentPos.z);
                             --DiceRoll.numMoves;
                             playerDiceText.text = DiceRoll.numMoves.ToString();
-                            audioManager.PlaySFX(audioManager.moveSound);
+                            audiosource.PlayOneShot(moveSound, 25);
                         }
                     }
                     this.direction = ShootingDirection.East;
@@ -98,7 +95,7 @@ public class CharacterMovement : MonoBehaviour
                             player.transform.position = new Vector3(currentPos.x, currentPos.y - 1, currentPos.z);
                             --DiceRoll.numMoves;
                             playerDiceText.text = DiceRoll.numMoves.ToString();
-                            audioManager.PlaySFX(audioManager.moveSound);
+                            audiosource.PlayOneShot(moveSound, 25);
                         }
                     }
                     this.direction = ShootingDirection.South;
@@ -122,7 +119,7 @@ public class CharacterMovement : MonoBehaviour
                             player.transform.position = new Vector3(currentPos.x, currentPos.y + 1, currentPos.z);
                             --DiceRoll.numMoves;
                             playerDiceText.text = DiceRoll.numMoves.ToString();
-                            audioManager.PlaySFX(audioManager.moveSound);
+                            audiosource.PlayOneShot(moveSound, 25);
                         }
                     }
                     this.direction = ShootingDirection.North;
@@ -151,7 +148,7 @@ public class CharacterMovement : MonoBehaviour
                     }
                     --DiceRoll.numMoves;
                     playerDiceText.text = DiceRoll.numMoves.ToString();
-                    audioManager.PlaySFX(audioManager.gunshotSound);
+                    audiosource.PlayOneShot(gunshotSound, 25);
 
 
                 }
@@ -180,7 +177,7 @@ public class CharacterMovement : MonoBehaviour
                             player.transform.position = new Vector3(currentPos.x - 1, currentPos.y, currentPos.z);
                             --DiceRoll.numMoves;
                             playerDiceText.text = DiceRoll.numMoves.ToString();
-                            audioManager.PlaySFX(audioManager.moveSound);
+                            audiosource.PlayOneShot(moveSound, 25);
                         }
                     }
                     this.direction = ShootingDirection.West;
@@ -204,7 +201,7 @@ public class CharacterMovement : MonoBehaviour
                             player.transform.position = new Vector3(currentPos.x + 1, currentPos.y, currentPos.z);
                             --DiceRoll.numMoves;
                             playerDiceText.text = DiceRoll.numMoves.ToString();
-                            audioManager.PlaySFX(audioManager.moveSound);
+                            audiosource.PlayOneShot(moveSound, 25);
                         }
                     }
                     this.direction = ShootingDirection.East;
@@ -229,7 +226,7 @@ public class CharacterMovement : MonoBehaviour
                             player.transform.position = new Vector3(currentPos.x, currentPos.y - 1, currentPos.z);
                             --DiceRoll.numMoves;
                             playerDiceText.text = DiceRoll.numMoves.ToString();
-                            audioManager.PlaySFX(audioManager.moveSound);
+                            audiosource.PlayOneShot(moveSound, 25);
                         }
                     }
                     this.direction = ShootingDirection.South;
@@ -253,7 +250,7 @@ public class CharacterMovement : MonoBehaviour
                             player.transform.position = new Vector3(currentPos.x, currentPos.y + 1, currentPos.z);
                             --DiceRoll.numMoves;
                             playerDiceText.text = DiceRoll.numMoves.ToString();
-                            audioManager.PlaySFX(audioManager.moveSound);
+                            audiosource.PlayOneShot(moveSound, 25);
                         }
                     }
                     this.direction = ShootingDirection.North;
@@ -282,7 +279,7 @@ public class CharacterMovement : MonoBehaviour
                     }
                     --DiceRoll.numMoves;
                     playerDiceText.text = DiceRoll.numMoves.ToString();
-                    audioManager.PlaySFX(audioManager.gunshotSound);
+                    audiosource.PlayOneShot(gunshotSound, 25);
                 }
 
             }

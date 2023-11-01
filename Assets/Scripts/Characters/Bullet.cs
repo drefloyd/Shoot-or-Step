@@ -16,16 +16,15 @@ public class Bullet : MonoBehaviour
     public GameObject topWall;
     public GameObject bottomWall;
     
+    public AudioSource audiosource;
+
     private string outerWallsName = "OutofBoundsWalls";
 
-    AudioManager audioManager;
 
     private void Awake()
     {
         Destroy(gameObject, life);
         gameObject.layer = 7;
-        audioManager=GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
-
     }
 
 
@@ -37,7 +36,9 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
 
             GameObject audioObject = GameObject.Find(outerWallsName);
-            audioManager.PlaySFX(audioManager.takeDamage);
+            audiosource = audioObject.GetComponent<AudioSource>();
+            AudioClip clip = Resources.Load<AudioClip>("takeDamageSound");
+            audiosource.PlayOneShot(clip, 25);
 
             Tuple<int, int> gridXY = numberGenerator();
 
@@ -56,8 +57,9 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
            
             GameObject audioObject = GameObject.Find(outerWallsName);
-            audioManager.PlaySFX(audioManager.takeDamage);
-
+            audiosource = audioObject.GetComponent<AudioSource>();
+            AudioClip clip = Resources.Load<AudioClip>("takeDamageSound");
+            audiosource.PlayOneShot(clip, 25);
 
             Tuple<int, int> gridXY = numberGenerator();
 
@@ -74,7 +76,8 @@ public class Bullet : MonoBehaviour
         else
         {
             GameObject audioObject = GameObject.Find(outerWallsName);
-            audioManager.PlaySFX(audioManager.bullet);
+            audiosource = audioObject.GetComponent<AudioSource>();
+            audiosource.PlayOneShot(audiosource.clip, 25);
         }
     }
 

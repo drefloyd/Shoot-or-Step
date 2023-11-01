@@ -8,7 +8,6 @@ TagManager:
   - Player1
   - Player2
   - PowerUp
-  - AudioManager
   layers:
   - Default
   - TransparentFX
